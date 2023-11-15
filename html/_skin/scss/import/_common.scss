@@ -2157,7 +2157,7 @@ html {
 
 @include xl-min {
   #footer {
-    .footer-inner {
+    .footer__bottom .footer-inner {
       padding-left: 20.5rem;
     }
 
@@ -2247,6 +2247,20 @@ html {
 }
 
 @include bp-max($inner-max-width) {
+  #footer .footer__top .footer-inner {
+    padding: 0;
+  }
+
+  #footer .footer__top .sitemap > li {
+    flex: 0 0 33.333%;
+  }
+}
+
+@include xl-max {
+  #footer .footer__top .footer-inner {
+    padding: 0 20px;
+  }
+
   #footer .footer__top .sitemap > li {
     flex: auto;
   }

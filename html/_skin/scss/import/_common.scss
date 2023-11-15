@@ -2102,8 +2102,6 @@ html {
 #footer {
   position: relative;
   width: 100%;
-  background: $footer-bg;
-  padding: 3.125rem 0;
   color: $footer-address-color;
 
   .footer-inner {
@@ -2175,9 +2173,112 @@ html {
   }
 }
 
-#footer .footer__top {}
+#footer .footer__top {
+  background-color: #efe7df;
 
-#footer .footer__bottom {}
+  .sitemap {
+    @include d-flex;
+
+    a {
+      display: block;
+      color: #555;
+    }
+
+    > li {
+      flex: 1;
+      padding: 2.5rem 2.5rem 10rem;
+    }
+
+    > li:nth-child(2n-1) {
+      background-color: #f5e2d1;
+    }
+
+    .depth1 {
+      padding: 0.24em 4px;
+      margin-bottom: 2rem;
+      color: #191919;
+      @include fz(20);
+      font-family: $font-title;
+      font-weight: $font-weight-bold;
+      text-align: center;
+      border-radius: 1.5em;
+      border: solid 3px #bfa101;
+      background-color: rgba($color: #bfa101, $alpha: 0.1);
+
+      &[data-url="news"] {
+        border-color: #9d5cbb;
+        background-color: rgba($color: #9d5cbb, $alpha: 0.1);
+      }
+
+      &[data-url="member-news"] {
+        border-color: #ffd700;
+        background-color: rgba($color: #ffd700, $alpha: 0.1);
+      }
+
+      &[data-url="photo-album"] {
+        border-color: #289b6e;
+        background-color: rgba($color: #289b6e, $alpha: 0.1);
+      }
+
+      &[data-url="reference-room"] {
+        border-color: #ff843a;
+        background-color: rgba($color: #ff843a, $alpha: 0.1);
+      }
+
+      &[data-url="electronic-genealogy"] {
+        border-color: #3057b9;
+        background-color: rgba($color: #3057b9, $alpha: 0.1);
+      }
+    }
+
+    .menu-wrap + .menu-wrap {
+      margin-top: 5rem;
+    }
+
+    .depth2 ul {
+      display: none;
+    }
+
+    .depth2 > li {
+      margin-top: 1em;
+      padding: 0 4px 0 1.5em;
+    }
+  }
+}
+
+@include bp-max($inner-max-width) {
+  #footer .footer__top .sitemap > li {
+    flex: auto;
+  }
+}
+
+@include md-max {
+  #footer .footer__top .sitemap {
+    padding: 2rem 0;
+
+    > li {
+      padding: 4px;
+      background-color: transparent !important;
+    }
+
+    .depth2 {
+      display: none;
+    }
+
+    .depth1 {
+      margin-bottom: 0;
+    }
+
+    .menu-wrap + .menu-wrap {
+      margin-top: 1rem;
+    }
+  }
+}
+
+#footer .footer__bottom {
+  background: $footer-bg;
+  padding: 3.125rem 0;
+}
 
 ul.footer-bottom-link {
   font-size: 0;

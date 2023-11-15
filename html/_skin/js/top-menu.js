@@ -116,6 +116,34 @@ $(function () {
 		headerSitemap.toggleClass('on');
 	});
 
+	/* footer sitemap */
+	var footerSitemapOrigin = gnbList.clone().addClass('sitemap');
+	var footerSitemap = gnbList.clone().addClass('sitemap');
+	footerSitemap.find('>li').each(function () {
+		$(this).children().wrapAll('<div class="menu-wrap"></div>');
+	});
+	var menu1 = footerSitemap.find('>li').eq(2).find('div');
+	var menu2 = footerSitemap.find('>li').eq(4).find('div');
+	menu1.appendTo(footerSitemap.find('>li').eq(1));
+	menu2.appendTo(footerSitemap.find('>li').eq(3));
+	footerSitemap.find('>li').eq(2).remove();
+	footerSitemap.find('>li').eq(3).remove();
+
+	//
+	function addSitemap() {
+		if ($(window).width() >= 768) {
+			$('#footerSitemap .footer-inner').html('');
+			footerSitemap.appendTo('#footerSitemap .footer-inner');
+		} else {
+			$('#footerSitemap .footer-inner').html('');
+			footerSitemapOrigin.appendTo('#footerSitemap .footer-inner');
+		}
+	}
+  addSitemap();
+	$(window).on('resize', function () {
+		addSitemap();
+	});
+
 	/* footer family site */
 	$(function () {
 		$('.familySite h3 a').on('click', function (e) {
@@ -140,7 +168,7 @@ $(function () {
 	if ($('.header__sta .sta__btn-genealogy').length === 1) {
 		var btn = $('.header__sta .sta__btn-genealogy');
 		var cloneBtn = btn.clone();
-    var breakpoint = 576;
+		var breakpoint = 576;
 
 		if ($(window).width() < breakpoint) {
 			cloneBtn.prependTo('#header .sta > .inner');

@@ -136,6 +136,10 @@
   @return $value / ($value * 0 + 1);
 }
 
+@function add-px-unit($value) {
+  @return calc(#{$value} * 1px);
+}
+
 @function rem($px, $base: 16) {
   @return (remove-unit($px / $base)) * 1rem;
 }
@@ -467,26 +471,12 @@
 
 @mixin fz($fonts-size: $font-size-base) {
   @if $fonts-size ==80 {
+    font-size: add-px-unit($fonts-size);
     font-size: rem(80);
 
     @include md-max {
+      font-size: 60px;
       font-size: rem(60);
-    }
-  }
-
-  @else if $fonts-size ==75 {
-    font-size: rem(75);
-
-    @include md-max {
-      font-size: rem(50);
-    }
-  }
-
-  @else if $fonts-size ==60 {
-    font-size: rem(60);
-
-    @include md-max {
-      font-size: rem(44);
     }
   }
 
@@ -494,79 +484,28 @@
     font-size: rem(55);
 
     @include md-max {
+      font-size: 40px;
       font-size: rem(40);
     }
   }
 
-  @else if $fonts-size ==45 {
-    font-size: rem(45);
-
-    @include md-max {
-      font-size: rem(32);
-    }
-  }
-
-  @else if $fonts-size ==40 {
-    font-size: rem(40);
-
-    @include md-max {
-      font-size: rem(30);
-    }
-  }
-
-  @else if $fonts-size ==35 {
-    font-size: rem(35);
-
-    @include md-max {
-      font-size: rem(28);
-    }
-  }
-
   @else if $fonts-size ==30 {
+    font-size: add-px-unit($fonts-size);
     font-size: rem(30);
 
     @include md-max {
+      font-size: 25px;
       font-size: rem(25);
     }
   }
 
-  @else if $fonts-size ==28 {
-    font-size: rem(28);
-
-    @include md-max {
-      font-size: rem(24);
-    }
-  }
-
-  @else if $fonts-size ==27 {
-    font-size: rem(27);
-
-    @include md-max {
-      font-size: rem(23);
-    }
-  }
-
-  @else if $fonts-size ==26 {
-    font-size: rem(26);
-
-    @include md-max {
-      font-size: rem(22);
-    }
-  }
-
   @else if $fonts-size ==24 {
+    font-size: add-px-unit($fonts-size);
     font-size: rem(24);
 
     @include md-max {
-      font-size: rem(20);
-    }
-  }
-
-  @else if $fonts-size ==22 {
-    font-size: rem(22);
-
-    @include md-max {
-      font-size: rem(18);
+      font-size: 22px;
+      font-size: rem(22);
     }
   }
 
@@ -659,16 +598,18 @@
     }
   }
   */
-  
   @else if ($fonts-size >16)and($fonts-size <=20) {
+    font-size: add-px-unit($fonts-size);
     font-size: rem($fonts-size);
 
     @include md-max {
+      font-size: $font-size-base;
       font-size: rem($font-size-base);
     }
   }
 
   @else if $fonts-size <=16 {
+    font-size: add-px-unit($fonts-size);
     font-size: rem($fonts-size);
   }
 }

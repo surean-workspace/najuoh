@@ -1,0 +1,53 @@
+<?php
+include('html/_skin/'._SKIN.'/layout/inc_head.html');
+include(_LIBRARY_DIR."/config/menu.php");
+if(!empty(@$arrNav[substr($category_code,0,2)]['sub'])) {
+    $cf_dep1_txt = @$arrNav[substr($category_code,0,2)]['url'];
+    $cf_url_txt = @$arrNav[substr($category_code,0,2)]['sub'][substr($category_code,0,4)]['url'];
+} else {
+   $cf_url_txt = @$arrNav[substr($category_code,0,2)]['url'];
+}
+?>
+
+
+<body id="sub" class="page-<?=@$code?> dep1-<?=@$cf_dep1_txt?>--fc page-url-<?=@$cf_url_txt?>--fc" >
+<iframe name="iframe_process" width="0" height="0" frameborder="0" style="display:none;"></iframe>
+<section id="wrapper">
+    <?php include('html/_skin/'._SKIN.'/layout/inc_top_menu.php');?>
+    <?php
+    $quick_option = $this->objDBH->getRow("select quick_option from tbl_master");
+    if(!empty(unserialize($quick_option['quick_option'])['show_side_sub'])&&unserialize($quick_option['quick_option'])['show_side_sub']=='y'){
+        include('html/_skin/'._SKIN.'/layout/inc_quick_menu.php');
+    }
+    ?>
+
+    <main id="contents" class="common_effect">
+	      <?=@$head_content?>
+        <?php // include('html/_skin/'._SKIN.'/layout/inc_navigation_middle.php');?>
+        <section id="subWrap">
+          <div class="inner subWrap__inner">
+              <?php include('html/_skin/'._SKIN.'/layout/inc_left_menu.php');?>
+              <section id="subConts">
+                <div class="ce_item">
+                  <?php include('html/_skin/'._SKIN.'/layout/inc_path.php');?>
+                </div>
+
+                <?php include('html/_skin/'._SKIN.'/layout/inc_subCommon.php');?>
+
+                <div class="ce_item">
+                  <?php echo $content_for_layout; ?>
+                </div>
+              </section>
+          </div>
+             
+        </section>
+    </main>
+    <?php echo @$arrSitemap; ?>
+    <?php echo @$bottom_for_layout; ?>
+</section>
+<?php echo $javascript_for_layout; ?>
+
+<script type="text/javascript" src="/html/_skin/<?=_SKIN?>/js/sub.js"></script>
+
+</body>
+</html>

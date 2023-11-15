@@ -44,6 +44,7 @@
 
 /*----- board search */
 .board-search-wrap--fc {
+  margin-bottom: 20px;
   margin-bottom: 1.25rem;
 
   > form {
@@ -52,14 +53,10 @@
 
   input[type='text'],
   select {
-    background-color: #f7f7f7;
+    border-color: #ddd;
     @include fz(18);
     font-weight: $font-weight-light;
-    height: 50px;
-
-    &:not(:focus) {
-      border-color: #f7f7f7;
-    }
+    height: 2.5rem;
   }
 
   select {
@@ -67,43 +64,28 @@
   }
 
   input[type='text'] {
-    padding-right: 58px;
+    padding-right: 2.5rem;
   }
 
   a {
     right: 0;
-    padding-right: 58px;
+    padding-right: 2.5rem;
     background-image: url('/html/_skin/img/common/ico_search_btn.png');
-    background-size: 41.38%;
-    background-color: #e6e6df;
-  }
-
-  p.search-select-wrap--fc {
-    display: none;
+    background-size: 33.333%;
   }
 }
 
 @include md-min {
   .board-search-wrap--fc {
-
-    input[type='text'],
-    select {
-      height: 50px;
-    }
-
-    input[type='text'] {
-      padding-right: 50px;
-    }
-
-    a {
-      padding-right: 50px;
-    }
-
     p {
       margin: 0 5px;
 
+      &.search-select-wrap--fc {
+        width: 160px;
+      }
+
       &.search-input-wrap--fc {
-        width: 300px;
+        width: 360px;
 
         input[type='text'] {
           width: 100%;
@@ -113,76 +95,64 @@
   }
 }
 
-@include md-max {
-  .board-search-wrap--fc p:nth-of-type(2) {
-    width: 100%;
-  }
-}
-
 /*----- total */
 .board-search-wrap--fc > .board_list_total--fc {
   padding-top: 2rem;
   line-height: 1;
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
-  color: $font-color-base;
-  @include fz(20);
+  color: rgba(102, 102, 102, 0.7);
 
   .search-total-num__accent--fc {}
 }
- 
 
-/*----- 게시판 상세  */
-.board-wrap--fc .board-view--fc {
-  border-top-width: 2px;
+/*----- 카테고리 */
 
-  header {
-    padding: 2rem 0;
 
-    h1,
-    address {
-      float: none;
-    }
-
-    address p {
-      padding: 0;
-      background: none;
-      @include fz(18);
-      color: #656565;
-    }
-
-    h1 {
-      @include fz(20);
-      font-weight: $font-weight-bold;
-      margin-bottom: 0.8em;
-    }
+/*----- 페이징 */
+.board-wrap--fc .board-paging,
+.products--fc .board-paging,
+.form--fc .board-paging {
+  > ol {
+    margin-left: 18px;
+    margin-right: 18px;
   }
-}
 
-// cont
-.board-wrap--fc .board-view--fc .board-conts--fc {
-
-  div,
-  p {
+  > a,
+  li > a {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid transparent;
+    margin: 0 2px;
+    line-height: calc(2rem - 2px);
     @include fz(18);
-    line-height: 1.56;
-    color: #656565;
-
-    strong {
-      color: #000;
-    }
+    font-weight: $font-weight-light;
+    transition-property: background-color;
+    border-radius: 50%;
+    color: #111;
   }
 
-  figure {
-    // max-width: 708px;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  li {
 
-    img {
-      display: block;
-      margin: 0 auto;
+    &.on > a,
+    &:hover > a {
+      // border: 1px solid #0d0d0d;
+    }
+
+    &:hover > a {
+      background-color: #dadada;
+      color: #111;
+    }
+
+    &.on > a {
+      background-color: $color-base;
+      border-color: $color-base;
+      color: #fff;
     }
   }
 }
- 
+
+.products--fc .board-paging,
+.board-wrap--fc .board-paging {
+  margin-top: 3rem;
+}

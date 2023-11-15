@@ -496,7 +496,7 @@ body.gnb-open {
 }
 
 #sub.dep1-electronic-genealogy--fc #subWrap {
- background-color: rgba($color: #fff, $alpha: 0.43);
+  background-color: rgba($color: #fff, $alpha: 0.43);
 }
 
 .top-btn {
@@ -701,7 +701,67 @@ body.gnb-open {
   }
 }
 
+.sta__btn-genealogy {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.5em 1em 0.5em 2.3em;
+  border-radius: 10em;
+  background-color: $color-base;
+  background-repeat: no-repeat;
+  background-position: left 1em center;
+  background-size: 1em auto;
+  background-image: url(/html/_skin/img/common/ico_genealogy.png);
+  @include fz(18);
+  color: #fff;
+  font-family: $font-title;
+}
+
+.header__sta {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  @include transform(translateY(-50%));
+}
+
+@include xl-min {
+  .sta__btn-genealogy:hover {
+    background-color: #999;
+    color: #fff;
+  }
+}
+
+@include xl-max {
+  .sta__btn-genealogy:active {
+    background-color: #999;
+    color: #fff;
+  }
+
+  .header__sta {
+    right: 80px;
+  }
+}
+
+@include sm-max {
+  .header__sta .sta__btn-genealogy {
+    display: none;
+  }
+}
+
+.sta .sta__btn-genealogy {
+  float: left;
+  margin-top: 4px;
+  margin-left: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  @include fz(13);
+}
+
+@include md-max {
+  .sta .sta__btn-genealogy {}
+}
+
 .sta {
+  @include clearfix;
   position: relative;
   display: $site-config-header-top;
   height: $header-sta-height;
@@ -717,12 +777,14 @@ body.gnb-open {
 
     > ul {
       display: inline-block;
+      font-size: 0;
 
       > li {
         position: relative;
         display: inline-block;
         vertical-align: top;
         height: 100%;
+        @include fz(13);
 
         &.type-member {
           display: $site-config-header-member;
@@ -732,20 +794,20 @@ body.gnb-open {
           content: "";
           position: absolute;
           top: 50%;
-          margin-top: -6.5px;
-          right: 0;
-          width: 1px;
-          height: 13px;
+          margin-top: -0.4em;
+          right: -1.5px;
+          width: 2px;
+          height: 0.8em;
           background-color: $header-pc-sta-menu-bor-color;
         }
 
         > a {
           display: block;
-          font-family: Titillium;
-          font-size: 13px;
+          font-size: 1em;
           color: $header-pc-sta-menu-color;
+          font-weight: $font-weight-bold;
           background-color: $header-pc-sta-menu-bg-color;
-          padding: 0 15px;
+          padding: 0 1em;
           line-height: $header-sta-height;
         }
 
@@ -1326,16 +1388,15 @@ html {
           > a {
             position: relative;
             display: block;
-            font-weight: 700;
-            font-size: 18px;
-            padding: 0 39px;
+            @include fz(20);
+            padding: 0 1.5em;
             line-height: $header-pc-height;
             color: $header-pc-1depth-color;
 
             &.current {
               color: $color-base;
 
-              &:after {
+             /*  &:after {
                 content: "";
                 position: absolute;
                 right: 39px;
@@ -1343,7 +1404,7 @@ html {
                 left: 39px;
                 height: 2px;
                 background-color: $color-base;
-              }
+              } */
             }
           }
 
@@ -1445,7 +1506,11 @@ html {
           }
         }
 
-        > li:hover ul {
+        .depth3 li.in a:after {
+          display: none;
+        }
+
+        > li:hover > ul {
           display: block;
         }
       }

@@ -127,11 +127,11 @@ $header-pc-bg-color: #fff;                                     // header 배경�
 $header-pc-sta-bg-color: $color-point;                          // header 상단 배경색
 $header-pc-sta-menu-bg-color: transparent;                     // header 상단 메뉴 배경색
 $header-pc-sta-menu-bg-color-hover: $color-base-hover;         // header 상단 메뉴 hover 배경색
-$header-pc-sta-menu-bor-color: rgba(255, 255, 255, 0.3);       // header 상단 메뉴 border색(메뉴 사이 구분선)
+$header-pc-sta-menu-bor-color: #222;       // header 상단 메뉴 border색(메뉴 사이 구분선)
 $header-pc-sta-menu-lang-bg-color: rgba(0, 0, 0, .1);          // header 상단 언어선택메뉴 배경색
 $header-pc-sta-menu-lang-bg-color-hover: $color-base-hover;    // header 상단 언어선택메뉴 hover 배경색
 $header-pc-sta-menu-lang-bor-color: rgba(0, 0, 0, .15);        // header 상단 언어선택메뉴 depth2 border색(메뉴 사이 구분선)
-$header-pc-sta-menu-color: #fff;                               // header 상단 메뉴 글자색
+$header-pc-sta-menu-color: #222;                               // header 상단 메뉴 글자색
 $header-pc-sta-menu-color-hover: #fff;                         // header 상단 메뉴 hover 글자색
 $header-pc-sitemap-btn-color: #333;                            // header 사이트맵 아이콘(햄버거 메뉴) 버튼색
 $header-pc-sitemap-btn-color-on: #333;                         // header 사이트맵 아이콘(햄버거 메뉴) on 일때 버튼색

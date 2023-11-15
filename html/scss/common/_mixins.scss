@@ -137,7 +137,13 @@
 }
 
 @function add-px-unit($value) {
-  @return calc(#{$value} * 1px);
+  @if $value==16px {
+    @return $value;
+  }
+
+  @else {
+    @return calc(#{$value} * 1px);
+  }
 }
 
 @function rem($px, $base: 16) {

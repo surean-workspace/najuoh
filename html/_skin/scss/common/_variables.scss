@@ -269,7 +269,7 @@ $sns-link-footer-color-kakao-hover: $sns-link-footer-color-hover;       // hover
 
 // footer
 $footer-bg: #2d2a62;
-$footer-address-color: #555;     // 주소, Copyright 글자색
+$footer-address-color: rgba(255,255,255,0.5);     // 주소, Copyright 글자색
 $footer-link-color: rgba(255, 255, 255, 0.7);           // ex) 이용약관/개인정보보호정책 등 링크 글자색
 $footer-link-color-hover: rgba(255, 255, 255, 1);
 $footer-familysite-color: #adb2bc;  // familysite 글자색

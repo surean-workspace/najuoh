@@ -1,0 +1,158 @@
+.board-wrap--fc a {
+  @include transition;
+  transition-property: background-color, border-color, opacity;
+}
+
+.board-wrap .category-tab {
+  display: none;
+}
+
+/*---- option */
+.board-utill-none,
+.search-none {
+  .board-search-wrap--fc {
+    display: none !important;
+  }
+}
+
+.board-utill-none,
+.board-tab-none {
+
+  .board-wrap--fc .category-tab--fc,
+  .board-wrap .category-tab {
+    display: none !important;
+  }
+}
+
+.board-utill-none,
+.board-paging-none {
+
+  .board-wrap--fc .board-paging,
+  .board-wrap .board-paging {
+    display: none !important;
+  }
+}
+
+.board-click-none {
+
+  .gallery-list--fc a,
+  .basic-board-list--fc--type2 a,
+  .basic-board-list--fc a {
+    pointer-events: none !important;
+  }
+}
+
+/*----- board search */
+.board-search-wrap--fc {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+
+  > form {
+    text-align: right;
+  }
+
+  input[type='text'],
+  select {
+    border-color: #ddd;
+    @include fz(18);
+    font-weight: $font-weight-light;
+    height: 2.5rem;
+  }
+
+  select {
+    padding: 0 1rem;
+  }
+
+  input[type='text'] {
+    padding-right: 2.5rem;
+  }
+
+  a {
+    right: 0;
+    padding-right: 2.5rem;
+    background-image: url('/html/_skin/img/common/ico_search_btn.png');
+    background-size: 33.333%;
+  }
+}
+
+@include md-min {
+  .board-search-wrap--fc {
+    p {
+      margin: 0 5px;
+
+      &.search-select-wrap--fc {
+        width: 160px;
+      }
+
+      &.search-input-wrap--fc {
+        width: 360px;
+
+        input[type='text'] {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*----- total */
+.board-search-wrap--fc > .board_list_total--fc {
+  padding-top: 2rem;
+  line-height: 1;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  color: rgba(102, 102, 102, 0.7);
+
+  .search-total-num__accent--fc {}
+}
+
+/*----- 카테고리 */
+
+
+/*----- 페이징 */
+.board-wrap--fc .board-paging,
+.products--fc .board-paging,
+.form--fc .board-paging {
+  > ol {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  > a,
+  li > a {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid transparent;
+    margin: 0 2px;
+    line-height: calc(2rem - 2px);
+    @include fz(18);
+    font-weight: $font-weight-light;
+    transition-property: background-color;
+    border-radius: 50%;
+    color: #111;
+  }
+
+  li {
+
+    &.on > a,
+    &:hover > a {
+      // border: 1px solid #0d0d0d;
+    }
+
+    &:hover > a {
+      background-color: #dadada;
+      color: #111;
+    }
+
+    &.on > a {
+      background-color: $color-base;
+      border-color: $color-base;
+      color: #fff;
+    }
+  }
+}
+
+.products--fc .board-paging,
+.board-wrap--fc .board-paging {
+  margin-top: 3rem;
+}

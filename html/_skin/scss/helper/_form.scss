@@ -1,0 +1,16 @@
+.board-wrap--fc .form--fc {
+	th.required:after,
+	.required:after {
+		content: '*';
+		top: 0;
+		vertical-align: top;
+		margin-left: 0.15em;
+		width: auto;
+		height: auto;
+		background: none;
+		color: $color-base;
+		font-weight: $font-weight-bold;
+		@include fz(20);
+		line-height: 1.2;
+	}
+}

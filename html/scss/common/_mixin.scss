@@ -1,0 +1,624 @@
+@charset "UTF-8";
+
+// sm: 575
+// md: 767
+// lg: 991
+// xl: 1199
+@mixin bp-max($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin bp-min($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// galaxy fold
+@mixin ssm-max {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+// max-width: 575px
+@mixin sm-max {
+  @media (max-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+// min-width: 576px
+@mixin sm-min {
+  @media (min-width: #{$breakpoint-sm + 0.1px}) {
+    @content;
+  }
+}
+
+// max-width: 767px
+@mixin md-max {
+  @media (max-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+// min-width: 768px
+@mixin md-min {
+  @media (min-width: #{$breakpoint-md + 0.1px}) {
+    @content;
+  }
+}
+
+// max-width: 991px
+@mixin lg-max {
+  @media (max-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+// min-width: 992px
+@mixin lg-min {
+  @media (min-width: #{$breakpoint-lg + 0.1px}) {
+    @content;
+  }
+}
+
+// max-width: 1199px
+@mixin xl-max {
+  @media (max-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+// min-width: 1200px
+@mixin xl-min {
+  @media (min-width: #{$breakpoint-xl + 0.1px}) {
+    @content;
+  }
+}
+
+// variables.scss에서 header 상단(sns, 로그인, 사이트맵, 다국어)영역을 사용안함(none)으로 설정했을 경우 #contents의 padding-top 변경
+@mixin contents-pc-padding-top($site-config-header-top) {
+  @if $site-config-header-top ==block {
+    padding-top: $contents-pc-padding-top; // header 상단 높이 + .header-bottom 높이
+  }
+
+  @else if $site-config-header-top ==none {
+    padding-top: $header-pc-height; // .header-bottom 높이
+  }
+}
+
+@mixin contents-tablet-padding-top($site-config-header-top) {
+  @if $site-config-header-top ==block {
+    padding-top: $contents-tablet-padding-top; // header 상단 높이 + .header-bottom 높이
+  }
+
+  @else if $site-config-header-top ==none {
+    padding-top: $header-tablet-height; // .header-bottom 높이
+  }
+}
+
+@mixin contents-mobile-padding-top($site-config-header-top) {
+  @if $site-config-header-top ==block {
+    padding-top: $contents-mobile-padding-top; // header 상단 높이 + .header-bottom 높이
+  }
+
+  @else if $site-config-header-top ==none {
+    padding-top: $header-mobile-height; // .header-bottom 높이
+  }
+}
+
+// variables.scss에서 header 상단(sns, 로그인, 사이트맵, 다국어)영역을 사용안함(none)으로 설정했을 경우 header 상단 높이 0처리
+@mixin sta-height-zero($site-config-header-top) {
+  @if $site-config-header-top ==none {
+    height: 0 !important;
+  }
+}
+
+// variables.scss에서 header 상단(sns, 로그인, 사이트맵, 다국어)영역을 사용안함(none)으로 설정했을 경우 header.fixed top 0으로 고정
+@mixin header-fixed-top-zero($site-config-header-top) {
+  @if $site-config-header-top ==none {
+    top: 0 !important;
+  }
+}
+
+@mixin transition($time: .2s all ease-in-out) {
+  @each $prefix in -moz-, -o-, -webkit-, '' {
+    #{$prefix}transition: $time;
+  }
+}
+
+// custom
+// rem으로 변환
+@function remove-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function rem($px, $base: 16) {
+  @return (remove-unit($px / $base)) * 1rem;
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin d-flex {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin colspace($space) {
+  margin-left: -$space;
+  margin-right: -$space;
+
+  > [class^='col-'] {
+    padding-right: $space;
+    padding-left: $space;
+    // margin-bottom: $space * 2;
+  }
+}
+
+@mixin align-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@mixin align-items-baseline {
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+@mixin align-items-end {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+@mixin align-items-start {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+@mixin align-items-space {
+  -webkit-box-align: space;
+  -ms-flex-align: space;
+  align-items: space-between;
+}
+
+@mixin justify-content-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@mixin justify-content-start {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+
+@mixin justify-content-end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+}
+
+@mixin justify-content-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@mixin justify-content-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+@mixin flex-align-center {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@mixin row-reverse {
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+@mixin flex-col($width) {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 $width;
+  flex: 0 0 $width;
+  max-width: $width;
+}
+
+@mixin order($num) {
+  -webkit-box-ordinal-group: $num + 1;
+  -ms-flex-order: $num;
+  order: $num;
+}
+
+@mixin overflow-hidden {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@mixin fit-thumb($padding-bottom, $max-height: 100%, $width: 100%) {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 0;
+  padding-bottom: $padding-bottom;
+  @include overflow-hidden;
+
+  > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    display: table-cell;
+    vertical-align: middle;
+    width: $width;
+    max-width: 200%;
+    max-height: $max-height;
+    padding: 1px;
+
+    @if $width ==auto {
+      min-width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@mixin transform($args...) {
+  will-change: transform;
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  transform: $args;
+}
+
+@mixin ellipsis($line-cnt, $line-height) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line-cnt;
+  /* 라인수 */
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-height: $line-height;
+  height: $line-height * $line-cnt;
+  /* line-height 가 1.2em 이고 3라인을 자르기 때문에 height는 1.2em * 3 = 3.6em */
+}
+
+/* element */
+@mixin item-dot($bg-color, $width) {
+  position: relative;
+  padding-left: 1rem;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $width;
+    height: $width;
+    margin-top: 0.625em;
+    // margin-right: 0.5em;
+    border-radius: 50%;
+    background-color: $bg-color;
+  }
+}
+
+@mixin item-bar($bg-color, $width) {
+  position: relative;
+  padding-left: 0.75em;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 0.8em;
+    width: $width;
+    height: 1px;
+    background-color: $bg-color;
+  }
+}
+
+@mixin item-square($padding-left, $width, $bg-color) {
+  position: relative;
+  padding-left: $padding-left;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $width;
+    height: $width;
+    margin-top: 0.625rem;
+    background-color: $bg-color;
+  }
+}
+
+@mixin item-slash($padding-left, $fz) {
+  position: relative;
+  padding-left: $padding-left;
+  line-height: 1.75;
+
+  &:before {
+    content: '/';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: $fz;
+    font-weight: 400;
+    line-height: 2.25;
+    @include transform(rotate(20deg));
+  }
+}
+
+@mixin item-num-cir($padding-left: 2.25rem, $width: 1.4em, $bg-color: $color-base, $color: #fff, $fz: 1em) {
+  counter-reset: num;
+
+  > li {
+    counter-increment: num;
+    position: relative;
+    @include d-flex;
+    @include align-items-center;
+    min-height: $width;
+    padding-left: $padding-left;
+
+    &:before {
+      content: counter(num);
+      position: absolute;
+      top: 0.125em;
+      left: 0;
+      width: $width;
+      height: $width;
+      line-height: $width - 0.125em;
+      border-radius: 100%;
+      background-color: $bg-color;
+      text-align: center;
+      font-size: $fz;
+      font-weight: 300;
+      color: $color;
+    }
+
+    &:nth-child(10),
+    &:nth-child(n + 10) {
+      &:before {
+        content: counter(num);
+      }
+    }
+  }
+
+  @include sm-max {
+    > li {
+      display: block;
+    }
+  }
+}
+
+@mixin list-num-cir--2($padding-left: 2.25rem, $width: 1.4em, $bg-color: $color-base, $color: #fff, $fz: 1em) {
+  counter-reset: num;
+
+  > li {
+    counter-increment: num;
+    position: relative;
+    // @include d-flex;
+    // @include align-items-center;
+    min-height: $width;
+    padding-left: $padding-left;
+
+    .num {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      width: $width;
+      height: $width;
+      line-height: $width - 0.125em;
+      border-radius: 100%;
+      background-color: $bg-color;
+      text-align: center;
+      font-size: $fz;
+      font-weight: 300;
+      color: $color;
+    }
+  }
+
+  @include sm-max {
+    > li {
+      display: block;
+    }
+  }
+}
+
+@mixin btn {
+  display: inline-block;
+  border-radius: 0;
+  @include transition;
+  transition-property: background, color;
+
+  > span {
+    position: relative;
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin btn-basic($color, $bg-color, $border-color, $minW: 12.5em, $height: 3.5625rem) {
+  @include btn;
+  width: auto;
+  min-width: $minW;
+  padding: 0 0.875em;
+  height: $height;
+  line-height: $height;
+  border: 1px solid $border-color;
+  text-align: center;
+  color: $color;
+  font-weight: $font-weight-mid;
+  background-color: $bg-color;
+
+  @include ssm-max {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@mixin slick {
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 1s ease-in-out;
+
+  &.slick-initialized {
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+@mixin swiper {
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 1s ease-in-out;
+
+  &.swiper-container-initialized {
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+@mixin fz($fonts-size: $font-size-base) {
+  @if $fonts-size ==80 {
+    font-size: rem(80);
+
+    @include md-max {
+      font-size: rem(60);
+    }
+  }
+
+  @else if $fonts-size ==75 {
+    font-size: rem(75);
+
+    @include md-max {
+      font-size: rem(60);
+    }
+  }
+
+  @else if $fonts-size ==60 {
+    font-size: rem(60);
+
+    @include md-max {
+      font-size: rem(48);
+    }
+  }
+
+  @else if $fonts-size ==50 {
+    font-size: rem(50);
+
+    @include md-max {
+      font-size: rem(46);
+    }
+  }
+
+  @else if $fonts-size ==45 {
+    font-size: rem(45);
+
+    @include md-max {
+      font-size: rem(34);
+    }
+  }
+
+  @else if $fonts-size ==42 {
+    font-size: rem(42);
+
+    @include md-max {
+      font-size: rem(30);
+    }
+  }
+
+  @else if $fonts-size ==40 {
+    font-size: rem(40);
+
+    @include md-max {
+      font-size: rem(30);
+    }
+  }
+
+  @else if $fonts-size ==35 {
+    font-size: rem(35);
+
+    @include md-max {
+      font-size: rem(30);
+    }
+  }
+
+  @else if $fonts-size ==30 {
+    font-size: rem(30);
+
+    @include md-max {
+      font-size: rem(25);
+    }
+  }
+
+  @else if $fonts-size ==26 {
+    font-size: rem(26);
+
+    @include md-max {
+      font-size: rem(22);
+    }
+  }
+
+  @else if $fonts-size ==25 {
+    font-size: rem(25);
+
+    @include md-max {
+      font-size: rem(22);
+    }
+  }
+ 
+  @else if $fonts-size ==24 {
+    font-size: rem(24);
+
+    @include md-max {
+      font-size: rem(20);
+    }
+  }
+
+  @else if ($fonts-size >16)and($fonts-size <=20) {
+    font-size: rem($fonts-size);
+
+    @include md-max {
+      font-size: $font-size-base;
+    }
+  }
+
+  @else if $fonts-size <=16 {
+    font-size: rem($fonts-size);
+  }
+}

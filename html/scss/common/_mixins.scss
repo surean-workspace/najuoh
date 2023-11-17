@@ -351,7 +351,7 @@
 }
 
 /* element */
-@mixin item-dot($bg-color, $width, $marginTop: 0.625em) {
+@mixin item-dot($bg-color, $width, $marginTop: 0.63em) {
   position: relative;
   padding-left: 1rem;
 
@@ -490,8 +490,35 @@
     font-size: rem(55);
 
     @include md-max {
+      font-size: 48px;
+      font-size: rem(48);
+    }
+  }
+
+  @else if $fonts-size ==45 {
+    font-size: rem(45);
+
+    @include md-max {
       font-size: 40px;
       font-size: rem(40);
+    }
+  }
+
+  @else if $fonts-size ==37 {
+    font-size: rem(37);
+
+    @include md-max {
+      font-size: 34px;
+      font-size: rem(34);
+    }
+  }
+
+  @else if $fonts-size ==35 {
+    font-size: rem(35);
+
+    @include md-max {
+      font-size: 30px;
+      font-size: rem(30);
     }
   }
 
@@ -500,8 +527,18 @@
     font-size: rem(30);
 
     @include md-max {
-      font-size: 25px;
-      font-size: rem(25);
+      font-size: 28px;
+      font-size: rem(28);
+    }
+  }
+
+  @else if $fonts-size ==26 {
+    font-size: add-px-unit($fonts-size);
+    font-size: rem(26);
+
+    @include md-max {
+      font-size: 24px;
+      font-size: rem(24);
     }
   }
 

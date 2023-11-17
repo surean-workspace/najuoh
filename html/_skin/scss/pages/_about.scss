@@ -1,0 +1,885 @@
+ .section-greet {
+   .greeting-tit {
+     @include fz(37);
+     font-weight: $font-weight-bold;
+     font-family: $font-title;
+     color: $color-base;
+     margin-bottom: 3.75rem;
+   }
+
+   .greet-thumb {
+     display: inline-block;
+     text-align: center;
+   }
+
+   .greet-thumb .figcaption {
+     padding-top: 1em;
+     @include fz(22);
+     font-family: $font-title;
+     line-height: 1.73;
+   }
+
+   .greet-thumb__name {
+     display: block;
+     @include fz(24);
+   }
+
+   .greet-words {
+     @include fz(18);
+     line-height: 1.67;
+
+     p + p {
+       margin-top: 1.67em;
+     }
+
+     .greet-words__foot {
+       @include fz(22);
+       font-family: $font-title;
+       text-align: center;
+       margin-top: 2.6em;
+     }
+   }
+
+   .greet-row {
+     .col-img {
+       text-align: center;
+       margin-bottom: 2rem;
+     }
+
+     .col-txt {}
+   }
+ }
+
+ @include sm-min {
+   .section-greet {
+     @include clearfix;
+
+     .greet-row .col-img {
+       float: left;
+       padding-right: 20px;
+       padding-bottom: 20px;
+       margin-bottom: 0;
+       text-align: left;
+     }
+   }
+ }
+
+ @include lg-min {
+   .section-greet {
+     .greet-row {
+       @include d-flex;
+
+       .col-img {
+         float: inherit;
+         @include flex-col(25.78%);
+       }
+
+       .col-txt {
+         @include flex-col(74.22%);
+       }
+     }
+   }
+ }
+
+ // 종훈
+ #sub.page-url-motto--fc #contents {
+   background-position: left 8% bottom -2%, center;
+   background-size: 45%;
+   background-image: url(/html/_skin/img/sub/about/bg_motto_tree.png), url(/html/_skin/img/sub/bg_sub_wrapper.jpg);
+ }
+
+ .section-motto {
+   .motto-diagram {
+     position: relative;
+     width: 100%;
+
+     .txt {
+       display: inline-block;
+       vertical-align: middle;
+       width: 100%;
+     }
+
+     .txt em {
+       color: #fff;
+     }
+
+     .bg-txt {
+       position: absolute;
+       top: 0;
+       right: 0;
+       padding: 1rem 0;
+       color: #e7cbb0;
+       font-size: 266.6%;
+       line-height: 1;
+       opacity: 0.24;
+       font-weight: $font-weight-bold;
+     }
+
+     .col-inner {
+       position: relative;
+       height: 100%;
+       padding: 3rem 1rem;
+       border-radius: 1.25rem;
+       @include overflow-hidden;
+       background: #b06b3e no-repeat center/cover;
+       @include fz(45);
+       font-family: $font-title;
+       color: #d7c7b9;
+     }
+
+     &__logo {
+       text-align: center;
+       margin-bottom: 3rem;
+     }
+
+     &__list {
+       @include d-flex;
+       text-align: center;
+       margin: 0 -5px;
+
+       > li {
+         padding: 0 5px;
+         margin: 5px 0;
+         @include flex-col(50%);
+       }
+
+       > li:first-child .col-inner {
+         background-image: url(/html/_skin/img/sub/about/bg_motto_01.jpg);
+       }
+
+       > li:nth-child(2) .col-inner {
+         background-image: url(/html/_skin/img/sub/about/bg_motto_02.jpg);
+       }
+
+       > li:nth-child(3) .col-inner {
+         background-image: url(/html/_skin/img/sub/about/bg_motto_03.jpg);
+       }
+
+       > li:nth-child(4) .col-inner {
+         background-image: url(/html/_skin/img/sub/about/bg_motto_04.jpg);
+       }
+     }
+   }
+
+   .motto-details {
+     margin-top: 2.125rem;
+     border-radius: 1.25rem;
+     border: 1px solid #a1896e;
+     background-color: #fff;
+     box-shadow: 0 10px 40px rgba($color: #383838, $alpha: 0.2);
+     @include fz(24);
+     font-family: $font-title;
+     color: #252524;
+     padding: 2rem;
+
+     .dfn > dt {
+       @include fz(26);
+       color: #604d3a;
+       font-weight: $font-weight-bold;
+     }
+
+     .dfn > dd {
+       position: relative;
+       padding-left: calc(1rem + 8px);
+
+       &:before {
+         content: "";
+         display: block;
+         position: absolute;
+         left: 0;
+         top: 0.5em;
+         width: 8px;
+         height: 8px;
+         border-radius: 50%;
+         background-color: #604d3a;
+       }
+     }
+   }
+
+   .motto-details__list {
+     > li {
+       padding-top: 1.25rem;
+       padding-bottom: 1.25rem;
+     }
+
+     > li:first-child {
+       padding-top: 0;
+     }
+
+     > li:last-child {
+       padding-bottom: 0;
+     }
+
+     > li + li {
+       border-top: 1px solid #e5e5e5;
+     }
+   }
+ }
+
+ @include md-min {
+   .section-motto {
+     .motto-diagram {
+       &__logo {
+         z-index: 2;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         display: inline-block;
+         @include transform(translateX(-50%)translateY(-50%));
+       }
+
+       &__list {
+         > li {
+           padding: 0 14px;
+           margin: 14px 0;
+         }
+       }
+     }
+   }
+ }
+
+ @include sm-min {
+   .section-motto .motto-diagram {
+     .txt {
+       position: absolute;
+       top: 50%;
+       left: 0;
+       @include transform(translateY(-50%));
+     }
+
+     .col-inner {
+       height: 0;
+       padding: 0 1rem;
+       padding-bottom: 63.92%;
+     }
+   }
+
+   .section-motto .motto-details__list {
+     > li {}
+
+     .dfn {
+       @include d-flex;
+
+       > dt {
+         @include flex-col(19.83%);
+         text-align: center;
+         padding-right: 3%;
+         text-indent: 6%;
+       }
+
+       > dd {
+         @include flex-col(80.17%);
+         padding-left: 4%;
+
+         &:before {
+           left: -4px;
+         }
+       }
+     }
+   }
+ }
+
+ @include bp-max(360px) {
+   .section-motto .motto-diagram__list {
+     > li {
+       @include flex-col(100%);
+     }
+   }
+ }
+
+ // 종기
+ .section-flag {
+   .flags-row {
+     @include d-flex;
+     flex-wrap: nowrap;
+     @include justify-content-around;
+   }
+ }
+
+ .section-bi {
+   border-top: 1px solid #cacaca;
+   padding-top: 3.75rem;
+
+   .sub_cont_tit {
+     margin-bottom: 2rem;
+   }
+
+   .bi-logo__row {
+     .col-img {
+       text-align: center;
+       font-family: $font-title;
+       @include fz(24);
+       font-weight: $font-weight-bold;
+     }
+
+     .detail {
+       @include fz(22);
+     }
+
+     .tit-radius {
+       display: inline-block;
+       padding: 0.2em 1em;
+       background-color: #eec9ae;
+       color: #333;
+       border-radius: 10em;
+       font-size: 1em;
+       font-family: $font-title;
+       font-weight: $font-weight-bold;
+     }
+
+     .detail > dt {
+       margin-bottom: 2.5rem;
+     }
+
+     .detail > dd {
+       padding-left: 1em;
+       font-weight: $font-weight-mid;
+     }
+   }
+
+   .ci-symbols {
+     margin-top: 3.75rem;
+   }
+
+   .ci-symbols__list {
+     > li {
+       @include d-flex;
+       background-color: rgba($color: #f3e5d9, $alpha: 0.5);
+       padding-top: 3.125rem;
+       padding-bottom: 2.5rem;
+       padding-right: 2.5rem;
+       border-radius: 1.25rem;
+
+       .thumb {
+         @include flex-col(34.85%);
+         text-align: center;
+         padding: 0 15px;
+       }
+
+       .thumb img {
+         border-radius: 100%;
+         background-color: #fff;
+         border: 1px solid #cacaca;
+       }
+
+       .detail {
+         @include flex-col(65.15%);
+         @include fz(20);
+
+         > dd + dd {
+           margin-top: 1em;
+         }
+
+         > dt {
+           font-weight: $font-weight-bold;
+           font-family: $font-title;
+           @include fz(24);
+           margin-bottom: 1rem;
+         }
+       }
+     }
+
+     > li + li {
+       margin-top: 1.25rem;
+     }
+   }
+
+   .bi-meaning {
+     position: relative;
+     padding-top: 3.75rem;
+     padding-left: 20px;
+     padding-right: 20px;
+     @include fz(18);
+     font-weight: $font-weight-light;
+
+     .tit {
+       left: 20px;
+       @include fz(24);
+       margin-bottom: 0.5rem;
+       font-weight: $font-weight-bold;
+     }
+   }
+ }
+
+ @include sm-min {
+   .section-bi {
+     .bi-logo {}
+
+     .bi-logo__row {
+       @include d-flex;
+       @include align-items-center;
+
+       .col-img {
+         @include flex-col(34.85%);
+       }
+
+       .col-txt {
+         @include flex-col(65.15%);
+       }
+     }
+   }
+
+   .section-bi .bi-meaning {
+     padding-left: 9.375rem;
+     padding-right: 4.375rem;
+
+     .tit {
+       position: absolute;
+       left: 4.875rem;
+     }
+   }
+ }
+
+ @include bp-min($inner-max-width) {
+   .section-bi .bi-meaning {
+     padding-left: 11.25rem;
+
+     .tit {
+       left: 6.875rem;
+     }
+   }
+ }
+
+ .page-url-flag-n-logo--fc #subWrap {
+   background-position: right -3% bottom -11%;
+ }
+
+ // 연혁
+ .page-url-history--fc .sub-wrap-conts {
+   position: relative;
+
+   > .sub-cont-section {
+     position: relative;
+   }
+
+   &:before {
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     right: 0;
+     background: url(/html/_skin/img/sub/about/bg_history.png) no-repeat right 3% top/63%;
+   }
+ }
+
+ @include bp-min($inner-max-width) {
+   .page-url-history--fc .sub-wrap-conts:before {
+     width: 100vw;
+     right: calc(((100vw - #{$inner-max-width}) / 2) * -1);
+     background-size: 33.625em;
+   }
+ }
+
+ // 조직도
+ .section-org {
+   .org {
+     background-color: #fcf7f3;
+     border-radius: 1.25rem;
+     text-align: center;
+     padding: 6.25rem 4.375rem;
+   }
+ }
+
+ //  회장단
+ .section-presidents {
+   .bg-color-table {
+     border-top: 1px solid #000;
+     text-align: center;
+
+     .region {
+       @include d-flex;
+       @include justify-content-between;
+       flex-direction: column;
+       text-align: left;
+
+       .region-name {
+         position: relative;
+         width: 4em;
+         padding-right: 0.4em;
+
+         &:after {
+           content: ":";
+           position: absolute;
+           top: 0;
+           right: 0.1em;
+         }
+       }
+
+       .region-person {
+         width: calc(100% - 4em);
+         padding-left: 0.2em;
+       }
+
+       > li {
+         @include d-flex;
+
+         > p {
+           @include fz();
+         }
+
+         .space {
+           @include d-flex;
+           @include justify-content-between;
+         }
+       }
+     }
+
+     th,
+     td {
+       vertical-align: middle;
+     }
+
+     th:first-child {
+       border-right: 1px solid #cacaca;
+     }
+
+     td {
+       @include fz();
+       padding: 2rem 5px;
+       line-height: 1.81;
+       font-weight: $font-weight-light;
+
+       small {
+         display: block;
+         font-size: 75%;
+         color: #6d6d6d;
+         line-height: 1.67;
+         margin-top: 0.5rem;
+
+         br:first-child,
+         br:last-child {
+           display: none;
+         }
+       }
+     }
+
+     thead {
+       background-color: #f5e4d4;
+       color: #333;
+       @include fz(18);
+       font-weight: $font-weight-mid;
+     }
+
+     thead th {
+       padding: 1em 5px;
+     }
+
+     tbody th {
+       @include fz(18);
+       font-weight: $font-weight-mid;
+     }
+
+     tbody tr {
+       background-color: rgba($color: #fdeef4, $alpha: 0.5);
+     }
+
+     tbody tr:nth-child(3n-1) {
+       background-color: rgba($color: #e8f6fd, $alpha: 0.5);
+     }
+
+     tbody tr:nth-child(3n) {
+       background-color: rgba($color: #fffce0, $alpha: 0.5);
+     }
+   }
+ }
+
+ //  임원사진
+ .executive-photo--fc .board-paging {
+   margin-top: 2.5rem;
+ }
+
+ .executive-photo__list {
+   text-align: center;
+   font-weight: $font-weight-black;
+   font-family: $font-title;
+   @include colspace(5px);
+
+   .thumb {
+     @include fit-thumb(121.35%, 100%, 100%);
+   }
+
+   .caption {
+     padding-top: 1.25rem;
+   }
+
+   .caption__duty {
+     @include fz(18);
+   }
+
+   .caption__name {
+     @include fz(20);
+     letter-spacing: 0.2em;
+   }
+
+   > li {
+     margin-bottom: 3.75rem;
+   }
+ }
+
+ @include md-min {
+   .executive-photo__list {
+     @include colspace(10px);
+   }
+ }
+
+ @include bp-min($inner-max-width) {
+   .executive-photo__list {
+     @include colspace(35px);
+   }
+ }
+
+ //  연간행사
+ .section-schedule {
+   .fc-button {
+     height: 2.875em;
+     background-image: none;
+     box-shadow: none;
+     border-color: #e1e1e1;
+     font-family: $font-title;
+     text-shadow: none;
+   }
+
+   .fc-button:not(.fc-state-active) {
+     background-color: #fff;
+   }
+
+   .fc-button.fc-corner-left {
+     border-top-left-radius: 0.5em;
+     border-bottom-left-radius: 0.5em;
+   }
+
+   .fc-button.fc-corner-right {
+     border-top-right-radius: 0.5em;
+     border-bottom-right-radius: 0.5em;
+   }
+
+   .fc-state-active,
+   .fc-button.fc-today-button:not(.fc-state-disabled) {
+     background-color: $color-base;
+     color: #fff;
+   }
+
+   .fc-center h2 {
+     @include fz(35);
+     font-weight: $font-weight-bold;
+     font-family: $font-title;
+     color: #333;
+   }
+
+   .fc-button.fc-today-button {
+     border-radius: 10em;
+     padding-left: 2em;
+     padding-right: 2em;
+   }
+
+   .fc-toolbar {
+     margin-bottom: 2.5rem;
+   }
+
+   .fc-day-header,
+   .fc-axis {
+     background-color: #fafafa;
+   }
+
+   .fc-day-header {
+     padding-top: 0.8em;
+     padding-bottom: 0.8em;
+     @include fz(19);
+   }
+
+   .fc td {
+     border-width: 0;
+   }
+
+   .fc .fc-day {
+     background-color: #fff;
+     border-width: 1px !important;
+
+     & + td {
+       border-left-width: 1px;
+     }
+   }
+
+   .fc-time-grid-container td {
+     border-width: 1px;
+   }
+
+   td .fc-day-number {
+     padding: 1rem 1.25rem;
+   }
+
+   .fc-event-title {
+     font-family: $font-title;
+   }
+
+   .fc-sat {
+     color: #0064ec;
+   }
+
+   .fc-direction-ltr .fc-daygrid-event.fc-event-end,
+   .fc-direction-rtl .fc-daygrid-event.fc-event-start {
+     margin-left: 1.25rem;
+   }
+
+   .fc-direction-ltr .fc-daygrid-event.fc-event-start,
+   .fc-direction-rtl .fc-daygrid-event.fc-event-end {
+     margin-right: 2rem;
+   }
+
+   .fc-unthemed .fc-content,
+   .fc-unthemed .fc-divider,
+   .fc-unthemed .fc-list-heading td,
+   .fc-unthemed .fc-list-view,
+   .fc-unthemed .fc-popover,
+   .fc-unthemed .fc-row,
+   .fc-unthemed tbody,
+   .fc-unthemed td,
+   .fc-unthemed th,
+   .fc-unthemed thead {
+     border-color: #e1e1e1;
+   }
+
+   div.fc-widget-header {
+     border-top-left-radius: 1.25rem;
+     border-top-right-radius: 1.25rem;
+     border: 1px solid #e1e1e1;
+     border-width: 1px 1px 0 1px;
+     @include overflow-hidden;
+   }
+
+   .fc-day-grid-container,
+   .fc-time-grid-container {
+     border-bottom-left-radius: 1.25rem;
+     border-bottom-right-radius: 1.25rem;
+     border: 1px solid #e1e1e1;
+     @include overflow-hidden;
+   }
+
+   td.fc-widget-header {
+     border: 0;
+   }
+
+   .fc-day-header {
+     border: 1px solid #e1e1e1;
+   }
+
+   .fc-scroller {
+     overflow-y: auto;
+     -ms-overflow-style: none;
+     /* IE and Edge */
+     scrollbar-width: none;
+     /* Firefox */
+   }
+
+   .fc-scroller::-webkit-scrollbar {
+     display: none;
+     /* Chrome, Safari, Opera*/
+   }
+ }
+
+ //  오시는 길
+ .directions-list {
+   .inc-map {
+     border-radius: 1.25rem;
+     border: solid 1px #a5a5a5;
+     @include overflow-hidden();
+     line-height: 0;
+   }
+
+   .detail {
+     margin-bottom: 3.75rem;
+
+     > dt {
+       position: relative;
+       @include fz(26);
+       font-weight: $font-weight-bold;
+       line-height: 1.31;
+       color: $color-base;
+       font-family: $font-title;
+       padding-left: calc(2.35em + 0.5rem);
+       padding-top: 1.25rem;
+       padding-bottom: 2.5rem;
+       margin-bottom: 1.25rem;
+       border-bottom: 1px solid #a7a0b1;
+
+       &:before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 2.35em;
+         height: 2.35em;
+         background: url(/html/_skin/img/sub/about/ico_direction_name.png) no-repeat center/contain;
+       }
+     }
+
+     > dd {
+       font-size: 0;
+
+       > span {
+         @include fz(20);
+       }
+     }
+
+     > dd + dd {
+       margin-top: 1rem;
+     }
+
+     .txt {
+       font-weight: $font-weight-light;
+     }
+
+     .tit {
+       position: relative;
+       font-weight: $font-weight-mid;
+       padding-left: 2.3em;
+       padding-right: 0.5em;
+
+       &:before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 1.3em;
+         height: 1.3em;
+         background: no-repeat center/contain;
+       }
+     }
+   }
+
+   .tel .tit:before {
+     background-image: url(/html/_skin/img/sub/about/ico_tel.png);
+   }
+
+   .fax .tit:before {
+     background-image: url(/html/_skin/img/sub/about/ico_fax.png);
+   }
+
+   .addr .tit:before {
+     background-image: url(/html/_skin/img/sub/about/ico_pin.png);
+   }
+
+   > li + li {
+     margin-top: 6.25rem;
+   }
+ }
+
+ @include sm-min {
+   .directions-list .detail {
+     > span {
+       display: inline-block;
+       vertical-align: top;
+     }
+
+     .tit {
+       width: 5em;
+     }
+
+     .txt {
+       width: calc(100% - 5em);
+     }
+   }
+ }

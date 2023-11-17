@@ -101,7 +101,7 @@
   max-width: 2560px;
   margin: 0 auto;
   overflow: hidden;
-  letter-spacing: -.5px;
+  letter-spacing: -.025em;
 }
 
 .inner {
@@ -492,7 +492,11 @@ body.gnb-open {
 }
 
 #sub #contents {
-  background: #f8eee7 url(/html/_skin/img/sub/bg_sub_wrapper.jpg) no-repeat center/cover;
+  background-color: #f8eee7;
+  background-repeat: no-repeat;
+  background-position: right bottom -32%, center;
+  background-size: 32%, cover;
+  background-image: url(/html/_skin/img/sub/about/bg_greet_logo.png), url(/html/_skin/img/sub/bg_sub_wrapper.jpg);
 }
 
 #sub.dep1-electronic-genealogy--fc #subWrap {

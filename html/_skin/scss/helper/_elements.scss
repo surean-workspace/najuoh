@@ -63,8 +63,10 @@ br {
   }
 }
 
-dl.dfn-dot {
-  @include item-dot($color-base, 4px);
+dl.dd-dot {
+  > dd {
+    @include item-dot($color-base, 3px);
+  }
 }
 
 /*-- list --*/
@@ -91,6 +93,15 @@ ul.list-dot {
 
   > li {
     padding-left: 10px;
+  }
+}
+
+.list-num {
+  padding-left: 1em;
+
+  &,
+  > li {
+    list-style: decimal;
   }
 }
 
@@ -226,43 +237,16 @@ button {
   }
 }
 
-.table {
+table {
   position: relative;
   width: 100%;
-
-  caption {
-    display: none;
-  }
-
-  th,
-  td {
-    vertical-align: middle;
-  }
-
-  tbody {
-    td {
-      &.td-left {
-        text-align: left;
-      }
-    }
-  }
-
-  .border-n--l {
-    border-left: 0;
-  }
-
-  .border-n--r {
-    border-right: 0;
-  }
 
   &.fix-col {
     table-layout: fixed;
   }
-
-  td.num {
-    text-align: right;
-  }
 }
+
+
 
 .v-mid {
 
@@ -299,6 +283,10 @@ button {
     margin-top: 1rem;
   }
 }
+
+
+
+
 
 /* wrapper */
 .txt-wrap {

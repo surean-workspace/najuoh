@@ -33,10 +33,10 @@ $site-config-footer-logo: block;            // footer 로고 (사용:block, 사�
 $site-config-footer-family-site: none;     // footer family site (사용:block, 사용안함:none)
 
 // input, textarea, select
-$input-placeholder-color: #b1b1b1;           // input, textarea의 placeholder 글자색
+$input-placeholder-color: #c4c4c4;           // input, textarea의 placeholder 글자색
 $input-placeholder-color-focus: transparent; // input, textarea의 focus일때 placeholder 글자색
 $input-bg-color: #fff;                       // input, textarea, select의 배경색
-$input-bor-color: #ccd0d7;                   // input, textarea, select의 border색
+$input-bor-color: #ddd;                   // input, textarea, select의 border색
 $input-bor-color-focus: $color-base;         // input, textarea, select의 focus일때 border색
 $input-color: #414141;                       // input, textarea, select의 글자색
 
@@ -69,18 +69,18 @@ $member-btn-withdrawal-color: #444;                     // 회원탈퇴 버튼 �
 $member-btn-withdrawal-color-hover: #444;               // 회원탈퇴 버튼 hover 글자색
 
 // board - 일반, 웹진, 메뉴얼, 서브페이지의 테이블
-$th-bg: #f4f5f7;            // th 배경색 (767px 이하는 적용 안함)
+$th-bg: #f5e4d4;            // th 배경색 (767px 이하는 적용 안함)
 $th-color: #333;            // th 글자색
-$td-bg: #fff;               // td 배경색 (767px 이하는 적용 안함)
-$td-color: #444;            // td 글자색, 링크(제목 부분) 글자색
-$th-bor-color: #c7c7c7;     // th 아래 border 색
-$td-bor-color: #e9e9e9;     // td 아래 border 색
-$td-link-color-hover: #000; // 링크(제목 부분) hover 글자색
+$td-bg: transparent;               // td 배경색 (767px 이하는 적용 안함)
+$td-color: #333;            // td 글자색, 링크(제목 부분) 글자색
+$th-bor-color: #ccc;     // th 아래 border 색
+$td-bor-color: #ccc;     // td 아래 border 색
+$td-link-color-hover: $color-base; // 링크(제목 부분) hover 글자색
 
 // board - 갤러리, 동영상, 이벤트, 브로셔
 $gallery-img-bor-color: #dadada; // 썸네일 border 색
 $gallery-bor-color: #dadada;     // 아래 border 색
-$gallery-title-color: #333;      // 제목 글자색
+$gallery-title-color: #111;      // 제목 글자색
 $gallery-date-color: #444;       // 날짜 글자색
 $gallery-link-color-hover: #000; // 제목 hover 글자색
 

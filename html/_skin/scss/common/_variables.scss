@@ -79,7 +79,7 @@ $td-link-color-hover: $color-base; // 링크(제목 부분) hover 글자색
 
 // board - 갤러리, 동영상, 이벤트, 브로셔
 $gallery-img-bor-color: #dadada; // 썸네일 border 색
-$gallery-bor-color: #dadada;     // 아래 border 색
+$gallery-bor-color: transparent;     // 아래 border 색
 $gallery-title-color: #111;      // 제목 글자색
 $gallery-date-color: #444;       // 날짜 글자색
 $gallery-link-color-hover: #000; // 제목 hover 글자색

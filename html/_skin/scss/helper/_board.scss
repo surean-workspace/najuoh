@@ -312,13 +312,17 @@
       @include flex-col(33.333%);
       padding: 0 10px;
     }
+
+    .thumb-wrap--fc {
+      background-color: #000;
+    }
   }
 }
 
 @include lg-min {
   .brochure-list--fc figure a:hover {
     .thumb-wrap--fc img {
-      opacity: 0.5;
+      opacity: 0.8;
     }
   }
 }
@@ -371,6 +375,166 @@
     thead th,
     td {
       padding: 1.4em 0;
+    }
+  }
+}
+
+@include md-max {
+
+  .basic-board-list--fc,
+  .webzine-board-list--fc {
+    tbody td {
+      background-color: transparent;
+    }
+  }
+}
+
+/*----- 웹진 게시판 */
+.board-wrap--fc .webzine-board-list--fc {
+  tbody tr td img:first-child {
+    padding-left: 0;
+  }
+
+  tbody tr td {
+    @include fz(18);
+    font-weight: $font-weight-light;
+  }
+
+  tbody tr td.board-subject--fc div strong {
+    @include fz(20);
+    font-family: $font-title;
+    font-weight: $font-weight-bold;
+    @include ellipsis(2, 2em);
+    height: auto;
+    max-height: calc(2 * 2em);
+  }
+}
+
+@include md-min {
+  .board-wrap--fc .webzine-board-list--fc {
+    tbody tr td.board-subject--fc div:first-child {
+      width: 105px;
+      background-color: #000;
+    }
+
+    tbody tr td.board-subject--fc div:last-child {
+      width: 100%;
+      padding-left: 6%;
+    }
+
+    tbody tr td.board-subject--fc div img.thumb--fc {
+      max-width: 105px;
+      @include transition(opacity 0.2s);
+    }
+  }
+}
+
+@include lg-min {
+  .board-wrap--fc .webzine-board-list--fc tbody tr td.board-subject--fc a:hover {
+    img.thumb--fc {
+      opacity: 0.8;
+    }
+  }
+}
+
+@include md-max {
+  .board-wrap--fc .webzine-board-list--fc {
+    tbody tr td {
+      padding-left: 90px;
+    }
+
+    tbody tr {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    tbody tr td.board-subject--fc div:first-child {
+      width: 70px;
+      left: -90px;
+    }
+  }
+}
+
+@include ssm-max {
+  .board-wrap--fc .webzine-board-list--fc {
+    tbody tr td {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    tbody tr td.board-subject--fc div:first-child {
+      position: static;
+      left: auto;
+      width: 100%;
+      margin-bottom: 1.5rem;
+      @include fit-thumb(56%, none, auto);
+    }
+
+    tbody tr td.board-subject--fc div img.thumb--fc {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+/*----- 갤러리 게시판 */
+.gallery-date--fc {
+  display: none;
+}
+
+.gallery-title--fc {
+  @include fz();
+  text-align: center;
+  font-weight: $font-weight-black;
+  font-family: $font-title;
+  line-height: 1.5;
+}
+
+.board-wrap--fc .gallery-list--fc {
+  border-top: 0;
+
+  figure {
+    margin-top: 0;
+    margin-bottom: 3.125rem;
+  }
+
+  figure a .thumb-wrap--fc.embed-responsive-16by9 {
+    @include fit-thumb(77.50%, 100%, auto);
+    background-color: #000;
+
+    img {
+      @include transition(opacity 0.2s);
+    }
+  }
+
+  & ~ .board-paging {
+    margin-top: 2rem;
+  }
+}
+
+@include md-min {
+  .board-wrap--fc .gallery-list--fc {
+    figure {
+      width: 33.333%;
+    }
+  }
+}
+
+@include lg-min {
+  .board-wrap--fc .gallery-list--fc figure a:hover {
+    .thumb-wrap--fc img {
+      opacity: 0.8;
+    }
+  }
+}
+
+@include xl-min {
+  .board-wrap--fc .gallery-list--fc {
+    margin-left: -12px;
+    margin-right: -12px;
+
+    figure {
+      padding: 0 12px;
     }
   }
 }

@@ -165,7 +165,7 @@ $(function () {
 	});
 
 	// 전자족보
-	if ($('.header__sta .sta__btn-genealogy').length === 1) {
+	/* if ($('.header__sta .sta__btn-genealogy').length === 1) {
 		var btn = $('.header__sta .sta__btn-genealogy');
 		var cloneBtn = btn.clone();
 		var breakpoint = 576;
@@ -183,5 +183,5 @@ $(function () {
 				cloneBtn.remove();
 			}
 		});
-	}
+	} */
 });

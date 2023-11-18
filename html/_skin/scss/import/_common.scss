@@ -697,10 +697,16 @@ body.gnb-open {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    text-align: left;
 
     a {
       display: block;
       width: 100%;
+    }
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
     }
   }
 }
@@ -745,6 +751,16 @@ body.gnb-open {
   }
 }
 
+@include md-max {
+  .header__sta {
+    right: 60px;
+  }
+
+  .header__sta .sta__btn-genealogy {
+    font-size: 0.875rem;
+  }
+}
+ 
 @include sm-max {
   .header__sta .sta__btn-genealogy {
     display: none;
@@ -958,15 +974,16 @@ body.gnb-open {
 
     .logo {
       height: 100%;
+      @include overflow-hidden;
 
       a {
-        height: 100%;
-        padding: 10px 0;
+        // height: 100%;
+        // padding: 10px 0;
+        line-height: $header-tablet-height;
 
         img {
           width: auto;
-          max-width: 100%;
-          height: 100%;
+          max-width: 65%;
         }
       }
     }
@@ -999,6 +1016,8 @@ body.gnb-open {
     }
 
     .logo a {
+      line-height: $header-mobile-height;
+
       img {}
     }
   }
@@ -1377,6 +1396,10 @@ html {
       width: auto;
       vertical-align: top;
       text-align: left;
+
+      > ul > li > a[data-url="electronic-genealogy"] {
+        display: none !important;
+      }
 
       > ul {
         display: inline-block;

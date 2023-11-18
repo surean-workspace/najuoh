@@ -3,7 +3,7 @@ include(_LIBRARY_DIR."/config/menu.php");
 if($locale != getDefaultLocale()) $arrUrl = explode('/', preg_replace('/'.$locale.'\//','',@$_GET['url']));
 $arrSubMenu = @$arrNav[substr(@$category_code,0,2)]['sub'];
  
-if (!empty(@$arrSubMenu) and !preg_match('/index.php\?tpf=shop/',$_SERVER['REQUEST_URI'])) {
+if (!empty(@$arrSubMenu) and !preg_match('/index.php\?tpf=shop/',$_SERVER['REQUEST_URI']) and !preg_match('/member/',$_SERVER['REQUEST_URI'])) {
 ?>
 <?php
 // 2차 카테고리

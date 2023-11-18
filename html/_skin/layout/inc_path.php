@@ -3,6 +3,8 @@
 include(_LIBRARY_DIR."/config/menu.php");
 $arrUrl = explode('/', @$_GET['url']);
 $arrSubMenu = @$arrNav[substr(@$category_code,0,2)]['sub'];
+
+if (!empty(@$arrSubMenu) and !preg_match('/index.php\?tpf=shop/',$_SERVER['REQUEST_URI']) and !preg_match('/member/',$_SERVER['REQUEST_URI'])) {
 ?>
 
 <section class="path-wrap">
@@ -33,3 +35,8 @@ if (strlen(@$category_code) >= 6) {
 ?>
 	</ul>
 </section>
+
+
+<?php
+}
+?>

@@ -33,7 +33,7 @@ $site-config-footer-logo: block;            // footer 로고 (사용:block, 사�
 $site-config-footer-family-site: none;     // footer family site (사용:block, 사용안함:none)
 
 // input, textarea, select
-$input-placeholder-color: #c4c4c4;           // input, textarea의 placeholder 글자색
+$input-placeholder-color: rgba(21, 21, 21, 0.4);           // input, textarea의 placeholder 글자색
 $input-placeholder-color-focus: transparent; // input, textarea의 focus일때 placeholder 글자색
 $input-bg-color: #fff;                       // input, textarea, select의 배경색
 $input-bor-color: #ddd;                   // input, textarea, select의 border색
@@ -123,7 +123,7 @@ $sub-tablet-visual-height: 310px; // 서브 비주얼 태블릿 높이
 $sub-mobile-visual-height: 200px; // 서브 비주얼 모바일 높이
 
 // header (pc)
-$header-pc-bg-color: #fff;                                     // header 배경색
+$header-pc-bg-color: #fffbf2;                                     // header 배경색
 $header-pc-sta-bg-color: $color-point;                          // header 상단 배경색
 $header-pc-sta-menu-bg-color: transparent;                     // header 상단 메뉴 배경색
 $header-pc-sta-menu-bg-color-hover: $color-base-hover;         // header 상단 메뉴 hover 배경색

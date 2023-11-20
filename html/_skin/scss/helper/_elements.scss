@@ -150,11 +150,11 @@ em {
   font-weight: $font-weight-bold;
 }
 
-.fc-base {
+.color_base {
   color: $color-base !important;
 }
 
-.fc-point {
+.color_point {
   color: $color-point !important;
 }
 
@@ -246,8 +246,6 @@ table {
   }
 }
 
-
-
 .v-mid {
 
   th,
@@ -283,10 +281,6 @@ table {
     margin-top: 1rem;
   }
 }
-
-
-
-
 
 /* wrapper */
 .txt-wrap {

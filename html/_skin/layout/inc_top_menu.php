@@ -16,6 +16,7 @@ if (!empty($category_code)) {
 <header id="header">
 	<div class="sta">
 		<div class="inner lang-depth1">
+      <p class="sta__welcome"><em class="color_base">오형근</em>님 어서오세요.</p>
 			<?php include('html/_skin/'._SKIN.'/layout/inc_social_link.php');?>
 
 			<ul>

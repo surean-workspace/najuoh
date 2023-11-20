@@ -1,0 +1,287 @@
+.dep1-member--fc {
+  .subWrap__inner {
+    padding-top: 6.25rem;
+  }
+}
+
+.member-wrap--fc {
+
+  input[type="text"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="e-mail"] {
+    background-image: none;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="e-mail"],
+  select {
+    @include fz(18);
+    font-weight: $font-weight-light;
+    padding: 0 1.5rem;
+    color: #555;
+
+    &:not(:focus) {
+      border-color: #a5a5a5;
+    }
+  }
+}
+
+/* 로그인 */
+.member-wrap--fc .login-form-head--fc {
+  color: #0d0d0d;
+  @include fz(22);
+  font-family: $font-title;
+  text-align: center;
+  margin-bottom: 3.75rem;
+
+  .login-logo {
+    margin-bottom: 2.5rem;
+  }
+
+  .login-logo img {
+    background-color: #fff;
+    border-radius: 100%;
+  }
+
+  .login-title {
+    @include fz(40);
+    font-weight: $font-weight-bold;
+    margin-bottom: 1rem;
+  }
+}
+
+.member-wrap--fc .login-form-wrap--fc {
+  width: 25.25rem;
+  text-align: left;
+
+  input[type="text"],
+  input[type="password"] {
+    border-radius: 0.5rem;
+    height: 3.625rem;
+  }
+
+  .login-input--fc legend {
+    @include fz(22);
+    font-family: $font-title;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .find-btn-wrap--fc {
+    width: auto;
+    float: inherit;
+    font-family: $font-title;
+    font-weight: $font-weight-black;
+
+    a {
+      color: #3b3b3b;
+    }
+  }
+}
+
+.member-wrap--fc .login-form-wrap--fc ul li {
+  a {
+    border-radius: 10em;
+    font-family: $font-title;
+    font-weight: $font-weight-black;
+  }
+
+  &:first-child a {
+    border-color: #eec9ae;
+    background-color: #eec9ae;
+    color: #1f1f1f;
+  }
+
+  &:last-child a {
+    border-color: #000;
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+.member-wrap--fc .login-form-wrap--fc .join-btn-wrap--fc ul li {
+  margin-bottom: 0.875rem;
+}
+
+/* 회원가입 */
+.member-wrap--fc .join-form-wrap--fc .box-wrap--fc {
+  border-color: #a5a5a5;
+}
+
+.member-wrap--fc .join-form-head--fc {
+  text-align: center;
+  font-family: $font-title;
+  margin-bottom: 6rem;
+
+  .tit {
+    @include fz(40);
+    font-weight: $font-weight-bold;
+  }
+
+  .subtit {
+    margin-top: 1em;
+    @include fz(22);
+  }
+}
+
+.member-wrap--fc .form-table--fc {
+  tr td {
+    @include fz();
+  }
+
+  input[type="radio"] + label,
+  input[type="checkbox"] + label {
+    color: #151515;
+  }
+
+  tr td .info-text--fc {
+    @include fz();
+    font-weight: $font-weight-light;
+    vertical-align: bottom;
+  }
+
+  tr.join-form-id--fc input {
+    min-width: 324px;
+  }
+
+  tr.join-form-password--fc input {
+    min-width: 430px;
+  }
+
+  tr.join-form-gender--fc {
+    span {
+      margin-right: 0;
+    }
+
+    span + span {
+      margin-left: 1rem;
+    }
+  }
+
+  .radio-wrap {
+    span {
+      margin-right: 0;
+    }
+
+    span + span {
+      margin-left: 1rem;
+    }
+  }
+
+  tr.join-form-birth--fc {
+    td > span {
+      margin-right: 0;
+      width: calc(100% / 3 - 10px);
+      max-width: 10em;
+    }
+
+    span {
+      margin-right: 0;
+    }
+
+    select {
+      min-width: auto;
+      width: 100%;
+    }
+
+    input,
+    select {
+      width: calc(100% - 2em);
+      max-width: 108px;
+      padding-left: 1em;
+      padding-right: 1em;
+      @include fz();
+
+      & + span {
+        margin-left: 0.5em;
+      }
+    }
+
+    .radio-wrap {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 3px 0 8px;
+    }
+  }
+
+  tr.join-form-tel--fc {
+    select {
+      width: 100%;
+      min-width: auto;
+      max-width: 129px;
+      margin-right: 5px;
+      padding: 0 1.25rem;
+    }
+
+    select ~ input {
+      margin-left: 5px;
+    }
+
+    input:last-of-type {
+      margin-right: 0;
+    }
+
+    .check-btn--fc {
+      border-color: #616161;
+      background-color: #616161;
+    }
+  }
+}
+
+@include md-min {
+  .member-wrap--fc .form-table--fc {
+    .join-form-id--fc .check-btn--fc {
+      margin-left: 5px;
+    }
+
+    tr.join-form-select--fc select {
+      min-width: 208px;
+    }
+  }
+}
+
+@include bp-max(840px) {
+  .member-wrap--fc .form-table--fc tr.join-form-tel--fc .check-btn--fc {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@include lg-max {
+  .member-wrap--fc .form-table--fc {
+    tr.join-form-birth-addr--fc input {
+      width: 100%;
+    }
+  }
+}
+
+@include md-max {
+  .member-wrap--fc .form-table--fc {
+    tr th {
+      padding-left: 0;
+    }
+
+    tr td {
+
+      input[type="text"],
+      input[type="password"],
+      input[type="e-mail"],
+      select {
+        @include fz();
+        padding: 0 1em;
+      }
+    }
+
+    tr.join-form-address--fc input.zipcode--fc {
+      width: 62%;
+      max-width: 14.625rem;
+    }
+
+    tr.join-form-tel--fc select {
+      max-width: 25%;
+    }
+  }
+}

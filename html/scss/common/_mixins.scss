@@ -505,6 +505,15 @@
     }
   }
 
+  @else if $fonts-size ==40 {
+    font-size: rem(40);
+
+    @include md-max {
+      font-size: 36px;
+      font-size: rem(36);
+    }
+  }
+
   @else if $fonts-size ==37 {
     font-size: rem(37);
 
@@ -550,6 +559,16 @@
     @include md-max {
       font-size: 22px;
       font-size: rem(22);
+    }
+  }
+
+  @else if $fonts-size ==22 {
+    font-size: add-px-unit($fonts-size);
+    font-size: rem(22);
+
+    @include md-max {
+      font-size: 20px;
+      font-size: rem(20);
     }
   }
 

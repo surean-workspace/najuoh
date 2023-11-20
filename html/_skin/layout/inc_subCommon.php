@@ -8,7 +8,7 @@ if(!empty(@$arrNav[substr($category_code,0,2)]['sub'])) { // 2depth
 } else { // 1depth
    $cf_title_txt = unserialize(@$arrNav[substr($category_code,0,2)]['title'])[getLocale()];
 }
-if (!empty(@$arrSubMenu) and !preg_match('/index.php\?tpf=shop/',$_SERVER['REQUEST_URI']) and !preg_match('/member/',$_SERVER['REQUEST_URI'])) {
+if (!empty(@$arrSubMenu) and !preg_match('/index.php\?tpf=shop/',$_SERVER['REQUEST_URI']) and !preg_match('/member+\//',$_SERVER['REQUEST_URI'])) {
 ?>
 
 

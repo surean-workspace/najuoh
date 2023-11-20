@@ -354,7 +354,7 @@
 /* element */
 @mixin item-dot($bg-color, $width, $marginTop: 0.63em) {
   position: relative;
-  padding-left: 1rem;
+  padding-left: calc(#{$width} + 0.5rem);
 
   &:before {
     content: '';

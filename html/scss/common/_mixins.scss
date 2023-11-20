@@ -487,6 +487,15 @@
     }
   }
 
+  @else if $fonts-size ==67 {
+    font-size: rem(67);
+
+    @include md-max {
+      font-size: 52px;
+      font-size: rem(52);
+    }
+  }
+
   @else if $fonts-size ==55 {
     font-size: rem(55);
 

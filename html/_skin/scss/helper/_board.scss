@@ -729,3 +729,27 @@
     }
   }
 }
+
+// latest
+.basic-board-list--fc.latest {
+  .board-date--fc {
+    text-align: right;
+    @include fz(22);
+    font-weight: $font-weight-light;
+    color: #6c6c6c;
+  }
+
+  tbody td.board-subject--fc a {
+    color: #555;
+    @include fz(22);
+    font-weight: $font-weight-normal;
+  }
+}
+
+@include md-min {
+  .basic-board-list--fc.latest {
+    td {
+      padding: 0.92em 0;
+    }
+  }
+}

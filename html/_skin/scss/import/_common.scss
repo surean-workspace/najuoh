@@ -786,6 +786,14 @@ body.gnb-open {
   padding-right: 1em;
 }
 
+#main .sta__btn-genealogy,
+#main #footerSitemap {
+  display: none;
+}
+
+
+
+
 .sta {
   @include clearfix;
   position: relative;
@@ -1793,9 +1801,9 @@ html {
   }
 }
 
-@include bp-max(1300px) {
+@include xl-min {
   #header .gnb {
-    padding-left: 50px;
+    padding-left: 12%;
   }
 }
 

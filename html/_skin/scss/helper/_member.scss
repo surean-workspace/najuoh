@@ -102,11 +102,19 @@
   }
 }
 
+.member-wrap--fc .login-form-wrap--fc .join-btn-wrap--fc {
+  clear: both;
+}
+
 .member-wrap--fc .login-form-wrap--fc .join-btn-wrap--fc ul li {
   margin-bottom: 0.875rem;
 }
 
 /* 회원가입 */
+.member-wrap--fc .join-btn-wrap--fc ul li a {
+  border-radius: 10em;
+}
+
 .member-wrap--fc .join-form-wrap--fc .box-wrap--fc {
   border-color: #a5a5a5;
 }

@@ -47,7 +47,8 @@ $(function () {
 		.bind('click', function (e) {
 			e.preventDefault();
 			var img = $(this).find('.thumb__img > img').attr('src');
-			var imgView = '<div class="photo-view--fc"><button class="photo-close"><span class="photo-close__btn">X</span></button><div class="photo-view__inner--fc"><img src="' + img + '" alt="image"/></div></div>';
+			var imgView =
+				'<div class="photo-view--fc"><button class="photo-close"><span class="photo-close__btn">X</span></button><div class="photo-view__inner--fc"><img src="' + img + '" alt="image"/></div></div>';
 			if ($('.photo-view--fc').length !== 0) {
 				$('.photo-view--fc .photo-view__inner--fc').html(imgView);
 			} else {
@@ -57,7 +58,18 @@ $(function () {
 		});
 
 	$(document).on('click', '.photo-close, .overlay-photo, .photo-view--fc', function () {
-    console.log('dfdfdfdf');
 		$('.photo-view--fc, .overlay-photo').remove();
+	});
+
+	$(document).on('change', '.filebox .upload-hidden', function () {
+		if (window.FileReader) {
+			// modern browser
+			var filename = $(this)[0].files[0].name;
+		} else {
+			// old IE
+			var filename = $(this).val().split('/').pop().split('\\').pop();
+		}
+
+		$(this).parent().parent('.filebox').find('.upload-name').val(filename);
 	});
 });

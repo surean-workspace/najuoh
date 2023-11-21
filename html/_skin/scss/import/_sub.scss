@@ -820,6 +820,14 @@ figure.img_full_wrap figcaption {
   margin-bottom: 3.75rem;
 }
 
+.article-tit {
+  @include fz(20);
+  font-weight: $font-weight-bold;
+  font-family: $font-title;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
 @include md-max {
   .subCommon--fc h2 {
     /*padding-top: 10px;

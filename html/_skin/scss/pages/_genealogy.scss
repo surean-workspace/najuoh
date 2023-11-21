@@ -17,6 +17,31 @@
   .top-txt-explain {
     margin-bottom: 3.75rem;
   }
+
+  .inc-member {
+    margin-bottom: 2rem;
+  }
+
+  .box-detail {
+    background-color: #f6ede5;
+    border-radius: 1.25rem;
+    padding: 2.5rem 1.25rem;
+
+    > dt {
+      margin-bottom: 0.3rem;
+      color: #764724;
+      font-weight: $font-weight-bold;
+      @include item-dot(#764724, 10px);
+    }
+
+    > dd {
+      padding-left: calc(10px + 0.5rem);
+    }
+  }
+
+  .box-detail + .box-detail {
+    margin-top: 2rem;
+  }
 }
 
 // 인트로
@@ -139,6 +164,196 @@
 }
 
 // 기본정보
+.genealogy-btn-wrap {
+  margin-bottom: 1rem;
+
+  .btn-list {
+    @include d-flex;
+    @include justify-content-end;
+    margin-left: -5px;
+    margin-right: -5px;
+
+    a {
+      display: block;
+      padding: 0.2em 1.125em 0.1em;
+      @include fz(18);
+      font-weight: $font-weight-bold;
+      font-family: $font-title;
+      color: #fff;
+      background-color: #666;
+      border: 1px solid #666;
+      border-radius: 2em;
+      @include transition(background-color 0.2s);
+    }
+
+    a.request {
+      background-color: $color-base;
+      border-color: $color-base;
+    }
+
+    a.list {
+      background-color: #000;
+      border-color: #000;
+    }
+
+    > li {
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.genealogy-form-foot-btns {
+  width: 100%;
+  max-width: 456px;
+  margin: 0 auto;
+  margin-top: 6.25rem;
+
+  .btn-list {
+    @include d-flex;
+    @include justify-content-center;
+    margin-left: -5px;
+    margin-right: -5px;
+
+    a,
+    button {
+      display: block;
+      width: 100%;
+      padding: 0.5em 1.125em 0.5em;
+      @include fz(18);
+      font-weight: $font-weight-light;
+      color: #151515;
+      background-color: #e0d7ce;
+      border: 1px solid #e0d7ce;
+      border-radius: 2em;
+      @include transition(background-color 0.2s);
+    }
+
+    a.request,
+    button.request {
+      background-color: $color-base;
+      border-color: $color-base;
+      color: #fff;
+    }
+
+    a.list,
+    button.list {
+      background-color: #000;
+      border-color: #000;
+      color: #fff;
+    }
+
+    > li {
+      flex: 1;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@include lg-min {
+
+  .genealogy-btn-wrap .btn-list a,
+  .genealogy-form-foot-btns .btn-list a,
+  .genealogy-form-foot-btns .btn-list button {
+    &:hover {
+      background-color: #fff;
+      border-color: #acacac;
+      color: #000;
+    }
+  }
+}
+
+@include xl-min {
+  .genealogy-form-foot-btns .btn-list {
+    margin-left: -10px;
+    margin-right: -10px;
+
+    > li {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.genealogy-form-table-wrap + .genealogy-form-table-wrap {
+  margin-top: 3.75rem;
+}
+
+.genealogy-form-table-wrap {
+  .filebox {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dedede;
+    background-color: #fff;
+    padding: 5px;
+
+    .filebox__btn {
+      padding: 0 0.75rem;
+      @include fz();
+      height: 2em;
+      border-radius: 5px;
+      line-height: inherit;
+      background-color: $color-base;
+      color: #fff;
+    }
+
+    .filebox__btn.delete {
+      background-color: #666;
+      color: #fff;
+    }
+
+    .filebox__btn + .filebox__btn {
+      margin-left: 5px;
+    }
+
+    label {
+      display: block;
+      text-align: center;
+      padding: 0 15px;
+      border-radius: 5px;
+      background-color: #000;
+      @include fz();
+      font-weight: 400;
+      height: 2em;
+      line-height: 2em;
+      width: 100px;
+      color: #fff;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .upload-name {
+      display: block;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: 0;
+      width: calc(100% - 100px);
+      max-width: none;
+      color: rgba(21, 21, 21, 0.5);
+      text-align: left;
+      background-color: transparent !important;
+      padding: 0 10px;
+      @include fz();
+      font-weight: $font-weight-light;
+    }
+
+    input[type="file"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  }
+}
+
 .genealogy-form-table--fc {
   position: relative;
   color: #333;
@@ -153,6 +368,26 @@
     width: 100%;
     height: 1px;
     background-color: #333;
+  }
+
+  .tb-info-txt {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  input,
+  select {
+    min-width: auto;
+    width: 100%;
+    font-weight: $font-weight-light;
+    margin-top: 4px;
+    margin-top: 4px;
+    @include fz();
+  }
+
+  select {
+    padding-right: calc(0.6em + 10px + 8px);
   }
 
   th,
@@ -172,13 +407,42 @@
     @include fz(18);
     padding-left: 8px;
     padding-right: 8px;
+
+    .check {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      height: 20px;
+      margin: 0 auto;
+      margin-top: -0.4em;
+      line-height: 0;
+
+      label {
+        padding-left: 20px;
+      }
+
+      label:before {
+        top: 0;
+      }
+    }
+
+    p.check {
+      display: block;
+      margin-top: 0;
+    }
   }
 
   td {
     background-color: #fbf9f7;
     @include fz();
+    // padding-left: 1.25em;
+    // padding-right: 1.25em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .t_l {
     padding-left: 1.25em;
-    padding-right: 1.25em;
   }
 
   td + td {
@@ -190,9 +454,98 @@
   }
 }
 
+.genealogy-form-table-wrap.write {
+  .genealogy-form-table--fc {
+    .t_l {
+      padding-left: 0.5em;
+    }
+
+    td {
+      // text-align: left;
+    }
+
+    .tb-check--fc {
+      .check {
+        margin-left: 0;
+      }
+    }
+
+    .tb-birth--fc {
+      font-weight: $font-weight-mid;
+
+      .birth-wrap {
+        @include d-flex;
+
+        > span {
+          @include d-flex;
+          @include align-items-center;
+          flex-wrap: nowrap;
+        }
+
+        > span {
+          margin-right: 1em;
+        }
+
+        > span:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      select {
+        max-width: 80px;
+      }
+
+      .year select {
+        max-width: 82px;
+      }
+    }
+
+    .tb-children--fc {
+      input {
+        max-width: 64px;
+      }
+
+      span {
+        margin-right: 8px;
+      }
+
+      span:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    .tb-addr--fc {
+      input {
+        width: 67%;
+        margin-right: 5px;
+      }
+
+      .check-btn--fc {
+        width: 30%;
+        max-width: 180px;
+        height: 2.9375rem;
+        line-height: 2.9375rem;
+        background-color: #000;
+        color: #fff;
+
+        > span {
+          display: inline-block;
+          vertical-align: middle;
+          line-height: 1.25;
+          padding-bottom: 0.2em;
+        }
+      }
+    }
+  }
+}
+
 @include md-max {
   .genealogy-form-table--fc.table_responsive {
     text-align: left;
+
+    .tb-check--fc {
+      width: 100%;
+    }
 
     .no-data--fc {
       display: none !important;
@@ -237,6 +590,169 @@
       display: none;
     }
   }
+
+  .genealogy-form-table-wrap.write {
+    .tb-addr--fc {
+
+      input,
+      .check-btn--fc {
+        width: 100%;
+        max-width: 100%;
+        margin: 3px 0;
+      }
+    }
+  }
+
+  .genealogy-form-table--fc th .check label {
+    padding-left: 15px;
+  }
+}
+
+.genealogy-form-flex--fc {
+  border-top: 1px solid #000;
+
+  input {
+    min-width: auto;
+  }
+
+  input,
+  select {
+    width: 100%;
+    @include fz();
+    font-weight: $font-weight-light;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  input {
+    padding: 0 0.8em;
+  }
+
+  select {
+    padding-left: 0.3em;
+    padding-right: calc(0.6em + 10px + 8px);
+  }
+
+  .form__row,
+  .form__item {
+    @include d-flex;
+  }
+
+  .form__row {}
+
+  .form__item {
+    flex: 1;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid rgba($color: #cacaca, $alpha: 0.5);
+  }
+
+  .form__row.auto .form__item {
+    flex: auto;
+  }
+
+  .tit,
+  .cont {
+    @include d-flex;
+    @include align-items-center;
+    height: 100%;
+  }
+
+  .tit {
+    flex-shrink: 0;
+    min-width: 4em;
+    font-weight: $font-weight-mid;
+    background-color: #f5e4d4;
+    text-align: center;
+    padding: 0.5em 1em;
+    @include fz(18);
+
+    > span {
+      width: 100%;
+    }
+  }
+
+  .cont {
+    width: 100%;
+    padding: 4px 12px;
+    @include fz();
+  }
+
+  .form-info-txt {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  .form-name--fc {
+    input {
+      max-width: 111px;
+      width: calc(50% - 8px);
+    }
+
+    input + input {
+      margin-left: 8px;
+    }
+  }
+
+  .form-marriage--fc {
+    flex: 0 0 190px;
+    max-width: 190px;
+
+    select {
+      max-width: 63px;
+    }
+  }
+
+  .form-gender--fc select {
+    max-width: 126px;
+  }
+
+  .form-birth--fc {
+    flex: 0 0 48.7%;
+    max-width: 48.7%;
+    font-weight: $font-weight-mid;
+
+    .cont {
+      @include d-flex;
+
+      > span {
+        @include d-flex;
+        @include align-items-center;
+        flex-wrap: nowrap;
+      }
+
+      > span {
+        margin-right: 1em;
+      }
+
+      > span:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    select {
+      max-width: 64px;
+    }
+
+    .year select {
+      max-width: 82px;
+    }
+  }
+
+  .form__item.full .tit {
+    width: 20%;
+  }
+}
+
+@include lg-max {
+  .genealogy-form-flex--fc .form__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    .tit {
+      width: 20%;
+    }
+  }
 }
 
 .genealogy-overviews__list {
@@ -263,6 +779,7 @@
     font-family: $font-title;
     font-weight: $font-weight-bold;
     text-align: center;
+    @include transition(background-color 0.2s);
 
     > span {
       position: relative;
@@ -312,6 +829,13 @@
       padding: 10px;
       @include flex-col(33.333%);
     }
+  }
+}
+
+@include lg-min {
+  .genealogy-overviews__list a:hover {
+    background-color: #f5f5f5;
+    border-color: $color-base;
   }
 }
 
@@ -372,6 +896,51 @@
       padding-left: 5px;
       padding-right: 5px;
       margin-bottom: 10px;
+    }
+  }
+
+  .modal__form-foot-btns {
+    margin-top: 1rem;
+
+    .btn-list {
+      @include d-flex;
+      @include justify-content-start;
+      margin-left: -2px;
+      margin-right: -2px;
+
+      a,
+      button {
+        display: block;
+        width: 100%;
+        padding: 0.5em 1.125em 0.5em;
+        @include fz();
+        font-weight: $font-weight-light;
+        color: #151515;
+        background-color: #fff;
+        border: 1px solid #acacac;
+        border-radius: 2em;
+        @include transition(background-color 0.2s);
+      }
+
+      a.request,
+      button.request {
+        background-color: #e0d7ce;
+        border-color: #e0d7ce;
+        color: #151515;
+      }
+
+      a.list,
+      button.list {
+        background-color: #000;
+        border-color: #000;
+        color: #fff;
+      }
+
+      > li {
+        padding-left: 2px;
+        padding-right: 2px;
+        margin-bottom: 4px;
+      }
     }
   }
 }
@@ -447,27 +1016,6 @@
   @include fz(18);
   font-weight: $font-weight-light;
   line-height: 1.94;
-
-  .box-detail {
-    background-color: #f6ede5;
-    border-radius: 1.25rem;
-    padding: 2.5rem 1.25rem;
-
-    > dt {
-      margin-bottom: 0.3rem;
-      color: #764724;
-      font-weight: $font-weight-bold;
-      @include item-dot(#764724, 10px);
-    }
-
-    > dd {
-      padding-left: calc(10px + 0.5rem);
-    }
-  }
-
-  .box-detail + .box-detail {
-    margin-top: 2rem;
-  }
 
   .box-detail:last-of-type {
     margin-bottom: 2.5rem;

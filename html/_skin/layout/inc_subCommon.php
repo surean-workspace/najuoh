@@ -3,7 +3,11 @@ include(_LIBRARY_DIR."/config/menu.php");
 if($locale != getDefaultLocale()) $arrUrl = explode('/', preg_replace('/'.$locale.'\//','',@$_GET['url']));
 $arrSubMenu = @$arrNav[substr(@$category_code,0,2)]['sub'];
 //if(getenv("REMOTE_ADDR") == "175.198.83.198") { echo "<div align=left><pre>"; var_dump($arrSubMenu); echo "</pre>"; die("<br>End</div>");}
-if(!empty(@$arrNav[substr($category_code,0,2)]['sub'])) { // 2depth
+if(!empty(@$arrNav[substr($category_code,0,2)]['sub'][substr($category_code,0,4)]['sub'][substr($category_code,0,6)]['sub'])) { // 4depth
+    $cf_title_txt = unserialize(@$arrNav[substr($category_code,0,2)]['sub'][substr($category_code,0,4)]['title'])[getLocale()];
+}else if(!empty(@$arrNav[substr($category_code,0,2)]['sub'][substr($category_code,0,4)]['sub'])) { // 3depth
+    $cf_title_txt = unserialize(@$arrNav[substr($category_code,0,2)]['sub'][substr($category_code,0,4)]['sub'][substr($category_code,0,6)]['title'])[getLocale()];
+}else if(!empty(@$arrNav[substr($category_code,0,2)]['sub'])) { // 2depth
     $cf_title_txt = unserialize(@$arrNav[substr($category_code,0,2)]['sub'][substr($category_code,0,4)]['title'])[getLocale()];
 } else { // 1depth
    $cf_title_txt = unserialize(@$arrNav[substr($category_code,0,2)]['title'])[getLocale()];

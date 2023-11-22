@@ -114,6 +114,7 @@
     }
 
     .depth-inner > a {
+      position: relative;
       margin-bottom: 1.5rem;
       padding: 0.3em 2em 0.3em 2.25em;
       @include fz(24);
@@ -129,8 +130,21 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72' width='72' height='72'%3E%3Ctitle%3Eico_search%3C/title%3E%3Cpath d='M49.09,10.91a27,27,0,0,1,0,38.18c-7.54,7.55-24.64,13.55-38.18,0A27,27,0,0,1,49.09,10.91ZM69,69,49.88,49.75' fill='none' stroke='rgb(0,0,0)' stroke-linecap='round' stroke-linejoin='round' stroke-width='6'/%3E%3C/svg%3E");
     }
 
+    .depth-inner > a .drop {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 1.5em;
+      background: no-repeat center/30%;
+    }
+
     .depth-inner > a.in {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72' width='72' height='72'%3E%3Ctitle%3Eico_search%3C/title%3E%3Cpath d='M49.09,10.91a27,27,0,0,1,0,38.18c-7.54,7.55-24.64,13.55-38.18,0A27,27,0,0,1,49.09,10.91ZM69,69,49.88,49.75' fill='none' stroke='rgb(0, 0, 0)' stroke-linecap='round' stroke-linejoin='round' stroke-width='6'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='15px' height='13px'%3E%3Cpath fill-rule='evenodd' fill='rgb(0, 0, 0)' d='M7.416,12.376 L0.276,0.001 L14.557,0.001 L7.416,12.376 Z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72' width='72' height='72'%3E%3Ctitle%3Eico_search%3C/title%3E%3Cpath d='M49.09,10.91a27,27,0,0,1,0,38.18c-7.54,7.55-24.64,13.55-38.18,0A27,27,0,0,1,49.09,10.91ZM69,69,49.88,49.75' fill='none' stroke='rgb(0, 0, 0)' stroke-linecap='round' stroke-linejoin='round' stroke-width='6'/%3E%3C/svg%3E");
+    }
+
+    .depth-inner > a.in .drop {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='15px' height='13px'%3E%3Cpath fill-rule='evenodd' fill='rgb(0, 0, 0)' d='M7.416,12.376 L0.276,0.001 L14.557,0.001 L7.416,12.376 Z'/%3E%3C/svg%3E");
     }
   }
 
@@ -159,7 +173,11 @@
   }
 
   .genealogy__nav--fc .genealogy__nav__depth2 .depth-inner > a.in:hover {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72' width='72' height='72'%3E%3Ctitle%3Eico_search%3C/title%3E%3Cpath d='M49.09,10.91a27,27,0,0,1,0,38.18c-7.54,7.55-24.64,13.55-38.18,0A27,27,0,0,1,49.09,10.91ZM69,69,49.88,49.75' fill='none' stroke='rgb(38, 34, 95)' stroke-linecap='round' stroke-linejoin='round' stroke-width='6'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='15px' height='13px'%3E%3Cpath fill-rule='evenodd' fill='rgb(38, 34, 95)' d='M7.416,12.376 L0.276,0.001 L14.557,0.001 L7.416,12.376 Z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72' width='72' height='72'%3E%3Ctitle%3Eico_search%3C/title%3E%3Cpath d='M49.09,10.91a27,27,0,0,1,0,38.18c-7.54,7.55-24.64,13.55-38.18,0A27,27,0,0,1,49.09,10.91ZM69,69,49.88,49.75' fill='none' stroke='rgb(38, 34, 95)' stroke-linecap='round' stroke-linejoin='round' stroke-width='6'/%3E%3C/svg%3E");
+  }
+
+  .genealogy__nav--fc .genealogy__nav__depth2 .depth-inner > a.in:hover .drop {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='15px' height='13px'%3E%3Cpath fill-rule='evenodd' fill='rgb(38, 34, 95)' d='M7.416,12.376 L0.276,0.001 L14.557,0.001 L7.416,12.376 Z'/%3E%3C/svg%3E");
   }
 }
 
@@ -290,6 +308,11 @@
     background-color: #fff;
     padding: 5px;
 
+    .filebox__btn-wrap {
+      display: flex;
+      margin: 4px 0;
+    }
+
     .filebox__btn {
       padding: 0 0.75rem;
       @include fz();
@@ -354,6 +377,19 @@
   }
 }
 
+@include md-max {
+  .genealogy-form-table-wrap .filebox {
+    flex-wrap: wrap;
+  }
+
+  .genealogy-form-table-wrap .filebox .filebox__btn-wrap {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    @include justify-content-end;
+  }
+}
+
 .genealogy-form-table--fc {
   position: relative;
   color: #333;
@@ -376,12 +412,15 @@
     margin-left: 5px;
   }
 
+  fieldset {
+    width: 100%;
+  }
+
   input,
   select {
     min-width: auto;
     width: 100%;
     font-weight: $font-weight-light;
-    margin-top: 4px;
     margin-top: 4px;
     @include fz();
   }
@@ -588,6 +627,14 @@
 
     colgroup {
       display: none;
+    }
+
+    tr.full_tr {
+
+      td,
+      th {
+        width: 100%;
+      }
     }
   }
 
@@ -1041,7 +1088,7 @@
       font-weight: $font-weight-mid;
       line-height: 1.5;
       color: #764724;
-      @include item-dot(#764724, 10px);
+      @include item-dot(#764724, 10px, 0.55em);
     }
   }
 }

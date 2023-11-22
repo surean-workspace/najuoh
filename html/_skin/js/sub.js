@@ -25,7 +25,7 @@ $(function () {
 			}
 		});
 
-	$('.genealogy__nav__depth3').siblings().addClass('in');
+	$('.genealogy__nav__depth3').siblings().addClass('in').append('<button type="button" class="drop"><span class="hidden"></span></button>');
 
 	$('.genealogy__nav--fc .genealogy__nav__depth2 > div.left').wrapAll('<div class="menu-left"></div>');
 	$('.genealogy__nav--fc .genealogy__nav__depth2 > div.right').wrapAll('<div class="menu-right"></div>');
@@ -33,7 +33,6 @@ $(function () {
 	$('.genealogy__nav__depth2 .depth-inner > a')
 		.unbind('click')
 		.bind('click', function (e) {
-			console.log(this);
 			var tag = $(this).parents('.depth-inner').find('li');
 			if (tag.length != 0) {
 				e.preventDefault();

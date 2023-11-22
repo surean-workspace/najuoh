@@ -117,11 +117,12 @@ sup {
 
 #sub.dep1-electronic-genealogy--fc {
   .sub-visual {
-    height: 219px;
+    height: auto;
+    padding-top: 6.25rem;
 
     > div {
       vertical-align: bottom;
-      padding-bottom: 3%;
+      padding-bottom: 2.5rem;
     }
 
     h2 {
@@ -140,6 +141,16 @@ sup {
 
     h2 {
       font-size: 20px;
+    }
+  }
+
+  #sub.dep1-electronic-genealogy--fc .sub-visual {
+    height: $sub-mobile-visual-height;
+    padding-top: 0;
+
+    > div {
+      vertical-align: middle;
+      padding-bottom: 0;
     }
   }
 }

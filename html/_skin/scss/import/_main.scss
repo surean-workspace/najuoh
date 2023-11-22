@@ -77,6 +77,7 @@
     vertical-align: middle;
     font-size: 0;
     font-family: $font-title;
+    word-break: break-all;
 
     > * {
       position: relative;
@@ -185,9 +186,13 @@
     .slider_item__inner__txtbox {
       padding-bottom: 0;
 
-      h2 {}
+      h2 {
+        @include fz(45);
+      }
 
-      p {}
+      p {
+        @include fz(18);
+      }
 
       a {
         font-size: 12px;
@@ -264,9 +269,16 @@
 
   .main_cont_tit,
   .tab-nav__list a {
-    @include fz(26);
     font-family: $font-title;
     font-weight: $font-weight-bold;
+  }
+
+  .main_cont_tit {
+    @include fz(26);
+  }
+
+  .tab-nav__list a {
+    @include fz();
   }
 
   .inc-board {
@@ -398,6 +410,7 @@
       display: inline-block;
       vertical-align: middle;
       line-height: 1.25;
+      word-break: break-all;
       padding-top: 0.5em;
       padding-left: 1.5em;
       padding-bottom: 0.5em;
@@ -546,6 +559,10 @@
     background-image: none;
   }
 
+  .main_info .tab-nav__list a {
+    @include fz(26);
+  }
+
   .main_info__row {
     margin-right: -10px;
     margin-left: -10px;
@@ -578,6 +595,29 @@
     .col-info {
       padding-right: 28px;
       padding-left: 28px;
+    }
+  }
+}
+
+@include md-max {
+  .main_info .tab-nav__list {
+    > li {
+      flex: auto;
+      text-align: center;
+      padding: 2px;
+    }
+
+    > li:first-child a,
+    a {
+      padding: 2px 0.5em;
+    }
+
+    a {
+      border: 1px solid rgba($color: #000000, $alpha: 0.1);
+    }
+
+    a:before {
+      display: none;
     }
   }
 }
@@ -635,20 +675,19 @@
 
     > li {
       padding: 0 5px;
+      @include flex-col(50%);
+      margin-bottom: 3rem;
     }
   }
 }
 
 @include sm-min {
-  .main_quick {
-    &__nav .nav-list {
-      margin-left: -15px;
-      margin-right: -15px;
+  .main_quick__nav .nav-list {
+    margin-left: -15px;
+    margin-right: -15px;
 
-      > li {
-        padding: 0 15px;
-        @include flex-col(50%);
-      }
+    > li {
+      padding: 0 15px;
     }
   }
 }
@@ -712,7 +751,14 @@
       > li {
         padding: 0 20px;
         @include flex-col(14.28%);
+        margin-bottom: 0;
       }
     }
+  }
+}
+
+@include ssm-max {
+  .main_quick__nav .nav-list > li {
+    @include flex-col(100%);
   }
 }

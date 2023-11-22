@@ -306,10 +306,18 @@
 
    .bi-logo__row {
      .col-img {
+       margin-bottom: 2rem;
        text-align: center;
        font-family: $font-title;
        @include fz(24);
        font-weight: $font-weight-bold;
+     }
+
+     .thumb__img {
+       display: block;
+       width: 88%;
+       max-width: 19.625rem;
+       margin: 0 auto;
      }
 
      .detail {
@@ -332,7 +340,6 @@
      }
 
      .detail > dd {
-       padding-left: 1em;
        font-weight: $font-weight-mid;
      }
    }
@@ -351,7 +358,7 @@
        border-radius: 1.25rem;
 
        .thumb {
-         @include flex-col(34.85%);
+         @include flex-col(26%);
          text-align: center;
          padding: 0 15px;
        }
@@ -363,7 +370,7 @@
        }
 
        .detail {
-         @include flex-col(65.15%);
+         @include flex-col(74%);
          @include fz(20);
 
          > dd + dd {
@@ -411,9 +418,24 @@
 
        .col-img {
          @include flex-col(34.85%);
+         margin-bottom: 0;
        }
 
        .col-txt {
+         @include flex-col(65.15%);
+       }
+
+       .detail > dd {
+         padding-left: 1em;
+       }
+     }
+
+     .ci-symbols__list > li {
+       .thumb {
+         @include flex-col(34.85%);
+       }
+
+       .detail {
          @include flex-col(65.15%);
        }
      }
@@ -478,6 +500,13 @@
      border-radius: 1.25rem;
      text-align: center;
      padding: 6.25rem 4.375rem;
+   }
+ }
+
+ @include md-max {
+   .section-org .org {
+     padding-left: 20px;
+     padding-right: 20px;
    }
  }
 
@@ -677,6 +706,8 @@
      margin-bottom: 2.5rem;
    }
 
+   .fc-toolbar .fc-left {}
+
    .fc-day-header,
    .fc-axis {
      background-color: #fafafa;
@@ -706,7 +737,7 @@
    }
 
    td .fc-day-number {
-     padding: 1rem 1.25rem;
+     padding: 0.2em 0.5em;
    }
 
    .fc-event-title {
@@ -778,6 +809,26 @@
    }
  }
 
+ @include sm-min {
+   .section-schedule td .fc-day-number {
+     padding: 1rem 2px 2px 1.25rem;
+   }
+ }
+
+ @include md-max {
+   .section-schedule .fc-toolbar {
+     .fc-center {
+       clear: both;
+       width: 100%;
+       margin-top: 2rem;
+     }
+
+     .fc-right {
+       display: none;
+     }
+   }
+ }
+
  //  오시는 길
  .directions-list {
    .inc-map {
@@ -833,8 +884,10 @@
 
      .tit {
        position: relative;
+       display: block;
+       width: 100%;
        font-weight: $font-weight-mid;
-       padding-left: 2.3em;
+       padding-left: 1.8em;
        padding-right: 0.5em;
 
        &:before {
@@ -869,13 +922,15 @@
 
  @include sm-min {
    .directions-list .detail {
-     > span {
+     dd > span {
        display: inline-block;
        vertical-align: top;
      }
 
      .tit {
+      display: inline-block;
        width: 5em;
+       padding-left: 2.3em;
      }
 
      .txt {

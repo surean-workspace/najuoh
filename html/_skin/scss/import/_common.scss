@@ -268,7 +268,7 @@ input {
         display: inline-block;
         position: absolute;
         left: 0;
-        top: 3px;
+        top: 1px;
         width: 20px;
         height: 20px;
         color: $input-checkbox-color-checked;
@@ -319,6 +319,7 @@ input {
     width: 15px;
     height: 15px;
     line-height: 15px;
+    top: 3px;
   }
 
   input[type="checkbox"]:checked + label:before {
@@ -648,6 +649,7 @@ body.gnb-open {
 @include md-max {
   .path-wrap {
     text-align: left;
+    display: none;
   }
 }
 
@@ -784,6 +786,12 @@ body.gnb-open {
   @include fz(13);
   line-height: $header-sta-height;
   padding-right: 1em;
+}
+
+@include md-max {
+  .sta__welcome {
+    line-height: 28px;
+  }
 }
 
 #main .sta__btn-genealogy,
@@ -1854,7 +1862,7 @@ html {
 
       &.on {
         z-index: 100000;
-        top: -11px;
+        top: -22px;
       }
     }
 
@@ -2036,6 +2044,14 @@ html {
           content: "-";
           display: inline-block;
           margin-right: 10px;
+        }
+      }
+
+      .depth4 > li > a {
+        background: darken($color: $header-mobile-2depth-bg-color, $amount: 5);
+
+        &:before {
+          content: "  " !important;
         }
       }
     }
@@ -2499,7 +2515,7 @@ ul.footer-bottom-link {
 .modal-body {
   padding-left: 2.5%;
   padding-right: 2.5%;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 
 .modal-footer {
@@ -2665,9 +2681,8 @@ ul.footer-bottom-link {
   }
 }
 
-
-.modal-body+.modal-footer {
-  padding-top: 0;
+.modal-body + .modal-footer {
+  padding-top: 1rem;
 }
 
 @include sm-min {

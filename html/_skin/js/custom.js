@@ -470,9 +470,15 @@ $(function(){
 		theme: "dark"
 	});
 	
-	if( $('.cateBox').length != 0 ) {
+	if( $('.subCommon--fc').length != 0 ) {
 		if( $('.category_list--fc > li.on').length == 0 ) {
 			$('.category_list--fc > li:first-child').addClass('on');
+		}
+	}
+
+	if( $('#leftMenu .leftMenu__list-fc .depth2').length != 0 ) {
+		if( $('#leftMenu .leftMenu__list-fc > li.on .depth2 > li.on').length == 0 ) {
+			$('#leftMenu .leftMenu__list-fc > li.on .depth2 > li:first-child').addClass('on');
 		}
 	}
 	

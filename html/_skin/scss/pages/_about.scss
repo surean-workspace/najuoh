@@ -163,19 +163,19 @@
 
    .motto-details {
      margin-top: 2.125rem;
+     padding: 2rem;
      border-radius: 1.25rem;
      border: 1px solid #a1896e;
      background-color: #fff;
      box-shadow: 0 10px 40px rgba($color: #383838, $alpha: 0.2);
      @include fz(24);
      font-family: $font-title;
+     font-weight: $font-weight-bold;
      color: #252524;
-     padding: 2rem;
 
      .dfn > dt {
        @include fz(26);
        color: #604d3a;
-       font-weight: $font-weight-bold;
      }
 
      .dfn > dd {
@@ -302,6 +302,7 @@
 
    .sub_cont_tit {
      margin-bottom: 2rem;
+     font-weight: $font-weight-bold;
    }
 
    .bi-logo__row {
@@ -378,7 +379,7 @@
          }
 
          > dt {
-           font-weight: $font-weight-bold;
+           font-weight: $font-weight-black;
            font-family: $font-title;
            @include fz(24);
            margin-bottom: 1rem;
@@ -599,16 +600,34 @@
        font-weight: $font-weight-mid;
      }
 
-     tbody tr {
-       background-color: rgba($color: #fdeef4, $alpha: 0.5);
+     tbody tr:nth-child(6),
+     tbody tr:nth-child(6n) {
+       background-color: #e7efe9; // 초록
      }
 
-     tbody tr:nth-child(3n-1) {
-       background-color: rgba($color: #e8f6fd, $alpha: 0.5);
+     tbody tr:nth-child(5),
+     tbody tr:nth-child(6n-1) {
+       background-color: #fcf0ea; // 빨강
      }
 
-     tbody tr:nth-child(3n) {
-       background-color: rgba($color: #fffce0, $alpha: 0.5);
+     tbody tr,
+     tbody tr:nth-child(6n+1) {
+       background-color: #fef6f9; // 분홍
+     }
+
+     tbody tr:nth-child(2),
+     tbody tr:nth-child(6n+2) {
+       background-color: #f3fafe; // 하늘
+     }
+
+     tbody tr:nth-child(3),
+     tbody tr:nth-child(6n+3) {
+       background-color: #fffdef; // 노랑
+     }
+
+     tbody tr:nth-child(4),
+     tbody tr:nth-child(6n+4) {
+       background-color: #ece9ef; // 보라
      }
    }
  }
@@ -928,7 +947,7 @@
      }
 
      .tit {
-      display: inline-block;
+       display: inline-block;
        width: 5em;
        padding-left: 2.3em;
      }

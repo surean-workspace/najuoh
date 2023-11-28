@@ -34,7 +34,7 @@ if (!empty($arrSubMenu[substr(@$category_code,0,4)]['sub'][substr($category_code
         $val['title'] = unserialize($val['title'])[getLocale()];
         $val['status'] = unserialize($val['status'])[getLocale()];
         if (!empty($val['title']) and $val['status'] == 'y') {
-            if ((empty($arrUrl[1]) and $index == 1) or @$arrUrl[2] == $val['url']) {
+            if ((empty($arrUrl[2]) and $index == 1) or @$arrUrl[3] == $val['url']) {
                 $on_class="class='on'";
                 if($val['is_outer_link'] == 'n') echo '<li '.$on_class.'><a href="'.$prefix_link.'/'.$val['full_url'].'">'.$val['title'].'</a></li>';
                 else echo '  <li '.$on_class.'><a href="'.$val['url'].'" target="'.$val['target'].'">'.$val['title'].'</a></li>';  // 외부링크 일때

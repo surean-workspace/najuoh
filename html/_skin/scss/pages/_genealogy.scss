@@ -148,9 +148,8 @@
     }
   }
 
-  .genealogy__nav__depth3 {
-    z-index: 10;
-    display: none;
+  .genealogy__nav__depth3,
+  .important-menu {
     /* position: absolute;
     left: 0; */
     width: 100%;
@@ -159,12 +158,33 @@
     margin-bottom: 1.5rem;
     border-radius: 1.25rem;
     background-color: #f2e1ca;
-
-    > li {
-      @include fz(20);
-      @include item-dot(#2f2f2f, 7px);
-    }
   }
+
+  .genealogy__nav__depth3 > li,
+  .important-menu__list > li {
+    @include fz(20);
+    @include item-dot(#2f2f2f, 7px);
+  }
+
+  .genealogy__nav__depth3 {
+    z-index: 10;
+    display: none;
+  }
+
+  .important-menu {
+    max-width: 405px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .important-menu__tit {
+    @include fz(26);
+    margin-bottom: 1.5rem;
+    font-weight: $font-weight-black;
+    font-family: $font-title;
+    text-align: center;
+  }
+
+  .important-menu__list {}
 }
 
 @include lg-min {
@@ -1106,6 +1126,31 @@
       padding-left: 5px;
       padding-right: 5px;
       text-align: center;
+    }
+  }
+}
+
+// 관향 나주의 역사
+.section-history--lines {
+  .top-txt {}
+
+  .history-box {
+    @include fz(18);
+    font-weight: $font-weight-light;
+    line-height: 1.94;
+    margin-top: 3rem;
+
+    p:not(.tit) + p {
+      margin-top: 1em;
+    }
+
+    .tit {
+      margin-bottom: 1em;
+      @include fz(24);
+      font-weight: $font-weight-mid;
+      line-height: 1.5;
+      color: #764724;
+      @include item-dot(#764724, 10px, 0.55em);
     }
   }
 }

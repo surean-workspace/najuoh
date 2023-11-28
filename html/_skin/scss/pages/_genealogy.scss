@@ -104,6 +104,7 @@
     > div {
       float: left;
       width: 50%;
+      padding: 0 2%;
     }
 
     .depth-inner {
@@ -164,6 +165,9 @@
   .important-menu__list > li {
     @include fz(20);
     @include item-dot(#2f2f2f, 7px);
+    padding-left: calc(7px + 1rem);
+    margin-top: 3px;
+    margin-bottom: 3px;
   }
 
   .genealogy__nav__depth3 {
@@ -178,13 +182,11 @@
 
   .important-menu__tit {
     @include fz(26);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     font-weight: $font-weight-black;
     font-family: $font-title;
     text-align: center;
   }
-
-  .important-menu__list {}
 }
 
 @include lg-min {
@@ -198,6 +200,20 @@
 
   .genealogy__nav--fc .genealogy__nav__depth2 .depth-inner > a.in:hover .drop {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='15px' height='13px'%3E%3Cpath fill-rule='evenodd' fill='rgb(38, 34, 95)' d='M7.416,12.376 L0.276,0.001 L14.557,0.001 L7.416,12.376 Z'/%3E%3C/svg%3E");
+  }
+}
+
+@include md-max {
+  .genealogy__nav--fc .genealogy__nav__depth2 > div {
+    float: inherit;
+    width: 100%;
+  }
+}
+
+@include sm-max {
+  .genealogy-intro--fc .genealogy-intro__body {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
